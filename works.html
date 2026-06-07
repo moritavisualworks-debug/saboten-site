@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works — SABOTEN WORKS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.4);--text-dim:rgba(255,255,255,0.22);--text-faint:rgba(255,255,255,0.12);--bebas:'Bebas Neue',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.92);backdrop-filter:blur(12px);}
+.nav-logo{font-family:var(--bebas);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
+.nav-logo span{display:block;font-family:var(--noto);font-size:8px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-top:2px;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-lang{display:flex;gap:12px;}
+.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
+.nav-lang span.active{color:var(--green);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+
+/* HERO */
+.works-hero{display:grid;grid-template-columns:1fr 1fr;padding-top:64px;border-bottom:0.5px solid var(--line-soft);}
+.works-hero-left{padding:52px 48px;border-right:0.5px solid var(--line-soft);}
+.works-eyebrow{font-family:var(--inter);font-size:9px;letter-spacing:0.25em;color:var(--text-dim);text-transform:uppercase;margin-bottom:16px;}
+.works-title{font-family:var(--bebas);font-size:56px;letter-spacing:0.04em;color:#fff;line-height:0.95;}
+.works-title em{font-style:normal;color:var(--green);}
+.works-desc{font-size:11px;line-height:2.1;color:var(--text-muted);font-weight:300;margin-top:22px;max-width:380px;}
+.works-hero-right{padding:52px 48px;display:flex;flex-direction:column;justify-content:space-between;}
+.works-what-label{font-family:var(--inter);font-size:9px;letter-spacing:0.22em;color:var(--green-dim);text-transform:uppercase;margin-bottom:10px;}
+.works-what-text{font-size:13px;line-height:2;color:rgba(255,255,255,0.35);font-weight:300;}
+.works-cta{display:flex;gap:12px;margin-top:32px;}
+.btn-primary{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--green);padding:13px 28px;display:inline-block;transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.85;}
+.btn-ghost{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);border:0.5px solid rgba(255,255,255,0.12);padding:12px 24px;display:inline-block;transition:color 0.2s;}
+.btn-ghost:hover{color:#fff;}
+
+/* PORTFOLIO GRID */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.04);}
+.portfolio-item{background:var(--black);aspect-ratio:4/3;position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.portfolio-item.tall{grid-row:span 2;aspect-ratio:unset;}
+.portfolio-placeholder{width:100%;height:100%;background:#141414;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;transition:background 0.3s;}
+.portfolio-item:hover .portfolio-placeholder{background:#1a1a1a;}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 0.4s ease;}
+.portfolio-item:hover img{transform:scale(1.03);}
+.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;opacity:0;transition:opacity 0.25s;}
+.portfolio-item:hover .portfolio-overlay{opacity:1;}
+.portfolio-overlay-title{font-family:var(--bebas);font-size:18px;letter-spacing:0.06em;color:#fff;}
+.ph-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:var(--text-faint);text-transform:uppercase;}
+
+/* CONTACT */
+.contact-section{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line-soft);}
+.contact-left{padding:52px 48px;border-right:0.5px solid var(--line-soft);}
+.contact-label{font-family:var(--inter);font-size:9px;letter-spacing:0.22em;color:var(--green-dim);text-transform:uppercase;margin-bottom:14px;}
+.contact-title{font-family:var(--bebas);font-size:44px;letter-spacing:0.04em;color:#fff;line-height:1;margin-bottom:18px;}
+.contact-desc{font-size:11px;line-height:2.1;color:rgba(255,255,255,0.35);font-weight:300;max-width:340px;}
+.contact-actions{display:flex;flex-direction:column;gap:10px;margin-top:28px;max-width:280px;}
+.contact-right{padding:52px 48px;}
+.contact-fields{display:flex;flex-direction:column;gap:16px;}
+.contact-field{border-bottom:0.5px solid rgba(255,255,255,0.1);padding-bottom:14px;}
+.contact-field-label{font-family:var(--inter);font-size:8px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px;}
+.contact-field input,.contact-field textarea{width:100%;background:transparent;border:none;outline:none;font-family:var(--noto);font-size:12px;color:var(--white);font-weight:300;resize:none;}
+.contact-field input::placeholder,.contact-field textarea::placeholder{color:rgba(255,255,255,0.15);}
+.contact-submit{margin-top:24px;}
+
+.nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{font-family:var(--bebas);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
+.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
+.nav-mobile-lang span.active{color:var(--green);}
+
+@media(max-width:768px){
+  .nav{padding:0 20px;height:56px;}
+  .nav-links,.nav-lang{display:none;}
+  .nav-hamburger{display:flex;}
+  .works-hero{grid-template-columns:1fr;padding-top:56px;}
+  .works-hero-left{padding:32px 20px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
+  .works-title{font-size:44px;}
+  .works-hero-right{padding:28px 20px;}
+  .portfolio-grid{grid-template-columns:1fr 1fr;}
+  .portfolio-item.tall{grid-row:span 1;aspect-ratio:1;}
+  .contact-section{grid-template-columns:1fr;}
+  .contact-left{padding:32px 20px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
+  .contact-right{padding:32px 20px;}
+  .contact-actions{max-width:100%;}
+}
+@media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">SABOTEN<span>TATTOO PARLOR / NAIL / WORKS</span></a>
+  <ul class="nav-links">
+    <li><a href="tattoo.html">Tattoo</a></li><li><a href="price.html">Price</a></li>
+    <li><a href="nail.html">Nail</a></li><li><a href="works.html" class="active">Works</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Shop</a></li><li><a href="access.html">Access</a></li>
+  </ul>
+  <div class="nav-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="tattoo.html">Tattoo</a><a href="price.html">Price</a><a href="nail.html">Nail</a>
+  <a href="works.html">Works</a><a href="https://nikerata.com" target="_blank">Shop</a><a href="access.html">Access</a>
+  <div class="nav-mobile-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
+</div>
+
+<div class="works-hero">
+  <div class="works-hero-left">
+    <div class="works-eyebrow">Creative Crew — Tokyo</div>
+    <div class="works-title">SABOTEN<br><em>WORKS</em></div>
+    <p class="works-desc">タトゥー、ネイル、ファッション——SABOTENはスタジオを超えた、東京発のクリエイティブクルー。映像・写真・ブランディングの制作依頼を受け付けています。</p>
+  </div>
+  <div class="works-hero-right">
+    <div>
+      <div class="works-what-label">What we do</div>
+      <div class="works-what-text">Film · Photography · Branding<br>Art Direction · Web · Event</div>
+    </div>
+    <div class="works-cta">
+      <a class="btn-primary" href="#contact">制作依頼・お問い合わせ</a>
+      <a class="btn-ghost" href="https://www.instagram.com/sabotentattooparlor/" target="_blank">Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<!-- 
+  ★ 作品追加方法:
+  .portfolio-item の中に <img src="images/work1.jpg" alt="作品名"> を追加するだけ。
+  大きく見せたい場合は class に "tall" を追加。
+-->
+<div class="portfolio-grid">
+  <div class="portfolio-item tall">
+    <div class="portfolio-placeholder"><span class="ph-hint">Film / Video</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Studio Reel 2024</div></div>
+  </div>
+  <div class="portfolio-item">
+    <div class="portfolio-placeholder"><span class="ph-hint">Photography</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Artist Portrait Series</div></div>
+  </div>
+  <div class="portfolio-item">
+    <div class="portfolio-placeholder"><span class="ph-hint">Branding</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Nikerata Visual Identity</div></div>
+  </div>
+  <div class="portfolio-item">
+    <div class="portfolio-placeholder"><span class="ph-hint">Film</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Music Video</div></div>
+  </div>
+  <div class="portfolio-item">
+    <div class="portfolio-placeholder"><span class="ph-hint">Photography</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Fashion Editorial</div></div>
+  </div>
+  <div class="portfolio-item">
+    <div class="portfolio-placeholder"><span class="ph-hint">Direction</span></div>
+    <div class="portfolio-overlay"><div class="portfolio-overlay-title">Campaign Direction</div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-left">
+    <div class="contact-label">Contact — Works</div>
+    <div class="contact-title">制作依頼・<br>お問い合わせ</div>
+    <p class="contact-desc">映像・写真・ブランディングなど、クリエイティブ全般のご依頼を承っております。まずはお気軽にご相談ください。<br><br><span style="color:rgba(255,255,255,0.18);font-size:10px;">We accept inquiries for film, photography, branding, and all creative production.</span></p>
+    <div class="contact-actions">
+      <a class="btn-primary" href="mailto:info@sabotentattooparlor.com">メールで問い合わせる</a>
+      <a class="btn-ghost" href="https://www.instagram.com/sabotentattooparlor/" target="_blank">Instagram DM</a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <div class="contact-label">お問い合わせ内容</div>
+    <form class="contact-fields" onsubmit="handleSubmit(event)">
+      <div class="contact-field">
+        <div class="contact-field-label">Name / お名前</div>
+        <input type="text" placeholder="Your name">
+      </div>
+      <div class="contact-field">
+        <div class="contact-field-label">Email / メールアドレス</div>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="contact-field">
+        <div class="contact-field-label">Message / メッセージ</div>
+        <textarea rows="4" placeholder="ご依頼内容をお聞かせください。"></textarea>
+      </div>
+      <div class="contact-submit">
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;">送信する / Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function handleSubmit(e){
+  e.preventDefault();
+  alert('お問い合わせありがとうございます。\nThank you for your inquiry.');
+}
+</script>
+</body>
+</html>
