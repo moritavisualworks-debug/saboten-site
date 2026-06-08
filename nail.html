@@ -5,94 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nail — SABOTEN NAIL PARLOR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--bebas:'Bebas Neue',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+:root{
+  --black:#0c0c0c;--white:#f0f0f0;
+  --pink:#ff6b9d;--pink-dim:rgba(255,107,157,0.7);--pink-border:rgba(255,107,157,0.25);--pink-bg:rgba(255,107,157,0.06);
+  --line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);
+  --text-muted:rgba(255,255,255,0.6);--text-dim:rgba(255,255,255,0.4);
+  --logo:'Barlow Condensed',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.92);backdrop-filter:blur(12px);}
-.nav-logo{font-family:var(--bebas);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
-.nav-logo span{display:block;font-family:var(--noto);font-size:8px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-top:2px;}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;transition:color 0.2s;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:68px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
+.nav-logo{display:flex;flex-direction:column;line-height:1;}
+.nav-logo-main{font-family:var(--logo);font-weight:900;font-size:26px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--logo);font-weight:700;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:1px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-lang{display:flex;gap:12px;}
+.nav-lang{display:flex;gap:10px;}
 .nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
-.nav-lang span.active{color:var(--green);}
+.nav-lang span.active{color:var(--pink);}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+.nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{font-family:var(--logo);font-weight:800;font-size:32px;letter-spacing:0.08em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-lang{display:flex;gap:16px;margin-top:20px;}
+.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
+.nav-mobile-lang span.active{color:var(--pink);}
 
 /* HERO */
-.nail-hero{display:grid;grid-template-columns:1fr 1fr;padding-top:64px;border-bottom:0.5px solid var(--line-soft);}
+.nail-hero{display:grid;grid-template-columns:1fr 1fr;padding-top:68px;border-bottom:0.5px solid var(--line-soft);}
 .nail-hero-left{padding:52px 48px;border-right:0.5px solid var(--line-soft);display:flex;flex-direction:column;justify-content:space-between;}
-.nail-eyebrow{font-family:var(--inter);font-size:9px;letter-spacing:0.25em;color:var(--text-dim);text-transform:uppercase;margin-bottom:16px;}
-.nail-title{font-family:var(--bebas);font-size:56px;letter-spacing:0.04em;color:#fff;line-height:0.95;}
-.nail-title em{font-style:normal;color:var(--green);}
+.nail-title{font-family:var(--logo);font-weight:900;font-size:60px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
+.nail-title em{font-style:normal;color:var(--pink);}
 .nail-desc{font-size:11px;line-height:2.1;color:var(--text-muted);font-weight:300;margin-top:22px;max-width:340px;}
-.nail-badge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:0.5px solid var(--green-border);padding:6px 14px;width:fit-content;}
-.nail-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:0.4;}50%{opacity:1;}}
-.nail-badge span{font-family:var(--inter);font-size:8px;letter-spacing:0.18em;color:var(--green-dim);text-transform:uppercase;}
-.nail-cta{display:flex;gap:12px;margin-top:32px;}
-.btn-primary{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--green);padding:13px 28px;display:inline-block;transition:opacity 0.2s;}
+.nail-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+.btn-primary{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);background:var(--pink);padding:13px 28px;display:inline-block;transition:opacity 0.2s;font-weight:500;}
 .btn-primary:hover{opacity:0.85;}
-.btn-ghost{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);border:0.5px solid rgba(255,255,255,0.12);padding:12px 24px;display:inline-block;transition:color 0.2s;}
-.btn-ghost:hover{color:#fff;}
+.btn-ghost{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);border:0.5px solid rgba(255,255,255,0.18);padding:12px 22px;display:inline-block;transition:all 0.2s;}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
 
-.nail-hero-right{display:grid;grid-template-columns:1fr 1fr;background:var(--black);}
+.nail-hero-right{display:grid;grid-template-columns:1fr 1fr;}
 .nail-photo{background:#161616;display:flex;align-items:center;justify-content:center;min-height:160px;border-right:0.5px solid var(--line-soft);border-bottom:0.5px solid var(--line-soft);overflow:hidden;position:relative;}
 .nail-photo:nth-child(2){border-right:none;}
 .nail-photo:nth-child(3){border-bottom:none;}
 .nail-photo:nth-child(4){border-right:none;border-bottom:none;}
 .nail-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-.photo-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:var(--text-faint);text-transform:uppercase;}
+.photo-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.18);text-transform:uppercase;}
 
 /* MENU TABS */
 .menu-tabs{display:flex;border-bottom:0.5px solid var(--line);}
-.menu-tab{padding:16px 32px;font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;}
-.menu-tab.on{color:#fff;border-bottom-color:var(--green);}
+.menu-tab{padding:16px 28px;font-family:var(--inter);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;}
+.menu-tab.on{color:#fff;border-bottom-color:var(--pink);}
 
 .menu-content{display:none;padding:0 48px;}
 .menu-content.show{display:block;}
 .menu-section{border-bottom:0.5px solid var(--line-soft);padding:28px 0;}
 .menu-section:last-child{border-bottom:none;}
-.menu-section-title{font-family:var(--bebas);font-size:16px;letter-spacing:0.12em;color:var(--green);margin-bottom:18px;}
-.menu-section-title span{font-family:var(--noto);font-size:9px;font-weight:300;color:rgba(255,255,255,0.25);letter-spacing:0.1em;margin-left:10px;}
+.menu-section-title{font-family:var(--logo);font-weight:800;font-size:16px;letter-spacing:0.1em;color:var(--pink);margin-bottom:18px;text-transform:uppercase;}
+.menu-section-title span{font-family:var(--noto);font-size:9px;font-weight:300;color:rgba(255,255,255,0.3);letter-spacing:0.1em;margin-left:10px;}
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;}
 .menu-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.04);}
 .menu-row:last-child{border-bottom:none;}
-.menu-name{font-size:11px;color:rgba(255,255,255,0.6);font-weight:300;}
-.menu-name-ja{font-size:9px;color:rgba(255,255,255,0.2);margin-left:6px;}
-.menu-right{display:flex;align-items:baseline;gap:12px;flex-shrink:0;text-align:right;justify-content:flex-end;}
-.menu-price{font-family:var(--bebas);font-size:17px;color:var(--white);letter-spacing:0.04em;}
+.menu-name{font-size:11px;color:rgba(255,255,255,0.65);font-weight:300;}
+.menu-name-ja{font-size:9px;color:rgba(255,255,255,0.3);margin-left:6px;}
+.menu-right{display:flex;align-items:baseline;gap:12px;flex-shrink:0;text-align:right;}
+.menu-price{font-family:var(--logo);font-weight:800;font-size:17px;color:var(--white);letter-spacing:0.04em;}
 .menu-time{font-family:var(--inter);font-size:8px;color:var(--text-dim);letter-spacing:0.1em;}
 
-.book-banner{padding:36px 48px;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--line-soft);}
+.book-banner{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--line-soft);}
 .book-banner-title{font-size:18px;font-weight:500;color:#fff;}
-.book-banner-sub{font-size:10px;color:rgba(255,255,255,0.28);font-weight:300;margin-top:4px;line-height:1.8;}
+.book-banner-sub{font-size:10px;color:var(--text-muted);font-weight:300;margin-top:4px;line-height:1.8;}
 .book-banner-actions{display:flex;gap:12px;}
 
-.nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
-.nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--bebas);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
-.nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
-.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
-.nav-mobile-lang span.active{color:var(--green);}
-
 @media(max-width:768px){
-  .nav{padding:0 20px;height:56px;}
+  .nav{padding:0 20px;height:60px;}
   .nav-links,.nav-lang{display:none;}
   .nav-hamburger{display:flex;}
-  .nail-hero{grid-template-columns:1fr;padding-top:56px;}
-  .nail-hero-left{padding:32px 20px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
-  .nail-title{font-size:44px;}
+  .nav-mobile-menu{top:60px;}
+  .nail-hero{grid-template-columns:1fr;padding-top:60px;}
+  .nail-hero-left{padding:28px 20px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
+  .nail-title{font-size:48px;}
   .nail-hero-right{order:-1;}
-  .nail-photo{min-height:120px;}
+  .nail-photo{min-height:110px;}
   .menu-tabs{overflow-x:auto;scrollbar-width:none;}
   .menu-tabs::-webkit-scrollbar{display:none;}
-  .menu-tab{flex-shrink:0;padding:12px 20px;font-size:9px;}
+  .menu-tab{flex-shrink:0;padding:12px 18px;font-size:9px;}
   .menu-content{padding:0 20px;}
   .menu-grid{grid-template-columns:1fr;}
   .book-banner{flex-direction:column;gap:16px;padding:24px 20px;align-items:flex-start;}
@@ -103,30 +105,35 @@ a{text-decoration:none;color:inherit;}
 </style>
 </head>
 <body>
-
 <nav class="nav">
-  <a href="index.html" class="nav-logo">SABOTEN<span>TATTOO PARLOR / NAIL / WORKS</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-main">SABOTEN</div>
+    <div class="nav-logo-sub">TATTOO · NAIL · FASHION · CREATIVE · REAL ESTATE</div>
+  </a>
   <ul class="nav-links">
     <li><a href="tattoo.html">Tattoo</a></li><li><a href="price.html">Price</a></li>
     <li><a href="nail.html" class="active">Nail</a></li><li><a href="works.html">Works</a></li>
-    <li><a href="https://nikerata.com" target="_blank">Shop Nikerata</a></li><li><a href="access.html">Access</a></li>
+    <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
+    <li><a href="access.html">Access</a></li>
   </ul>
   <div class="nav-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
-  <a href="tattoo.html">Tattoo</a><a href="price.html">Price</a><a href="nail.html">Nail</a>
-  <a href="works.html">Works</a><a href="https://nikerata.com" target="_blank">Shop</a><a href="access.html">Access</a>
+  <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a><a href="price.html" onclick="toggleMenu()">Price</a>
+  <a href="nail.html" onclick="toggleMenu()">Nail</a><a href="works.html" onclick="toggleMenu()">Works</a>
+  <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
+  <a href="access.html" onclick="toggleMenu()">Access</a>
   <div class="nav-mobile-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
 </div>
 
 <div class="nail-hero">
   <div class="nail-hero-left">
     <div>
-      <div class="nail-eyebrow">Nail Salon — Akasaka, Tokyo</div>
       <div class="nail-title">SABOTEN<br><em>NAIL</em><br>PARLOR</div>
-      <p class="nail-desc">タトゥースタジオに併設したネイルサロン。ジェルネイルからエクステンションまで幅広く対応。完全予約制・Instagram予約受付中。</p>
-      <div class="nail-badge"><div class="nail-badge-dot"></div><span>By appointment — Instagram only</span></div>
+      <p class="nail-desc">タトゥースタジオに併設したネイルサロン。ジェルネイルからエクステンションまで幅広く対応。完全予約制。</p>
     </div>
     <div class="nail-cta">
       <a class="btn-primary" href="https://www.instagram.com/sabotenNAILSALON/" target="_blank">Instagram で予約</a>
@@ -151,7 +158,7 @@ a{text-decoration:none;color:inherit;}
 
   <div class="menu-content show" id="tab-hand">
     <div class="menu-section">
-      <div class="menu-section-title">Hand Gel Menu <span>ハンドジェル</span></div>
+      <div class="menu-section-title">Hand Gel <span>ハンドジェル</span></div>
       <div class="menu-grid">
         <div>
           <div class="menu-row"><span class="menu-name">One Color <span class="menu-name-ja">ワンカラー</span></span><span class="menu-right"><span class="menu-price">¥6,000</span><span class="menu-time">1h</span></span></div>
@@ -188,7 +195,7 @@ a{text-decoration:none;color:inherit;}
 
   <div class="menu-content" id="tab-foot">
     <div class="menu-section">
-      <div class="menu-section-title">Foot Gel Menu <span>フットジェル（gel + 足湯）</span></div>
+      <div class="menu-section-title">Foot Gel <span>フットジェル（gel + 足湯）</span></div>
       <div class="menu-grid">
         <div><div class="menu-row"><span class="menu-name">One Color <span class="menu-name-ja">ワンカラー</span></span><span class="menu-right"><span class="menu-price">¥9,000</span><span class="menu-time">1.5h</span></span></div></div>
         <div><div class="menu-row"><span class="menu-name">Art Course <span class="menu-name-ja">アートコース</span></span><span class="menu-right"><span class="menu-price">¥14,000</span><span class="menu-time">2.5h〜</span></span></div></div>
@@ -208,7 +215,7 @@ a{text-decoration:none;color:inherit;}
         </div>
         <div>
           <div class="menu-row"><span class="menu-name">Cat Claw Off <span class="menu-name-ja">猫爪 ¥300/本</span></span><span class="menu-right"><span class="menu-price">+別途</span></span></div>
-          <div class="menu-row"><span class="menu-name">Heavy Deco Off <span class="menu-name-ja">ゴテゴテ・10パーツ以上</span></span><span class="menu-right"><span class="menu-price">¥3,000</span></span></div>
+          <div class="menu-row"><span class="menu-name">Heavy Deco Off <span class="menu-name-ja">ゴテゴテ</span></span><span class="menu-right"><span class="menu-price">¥3,000</span></span></div>
           <div class="menu-row"><span class="menu-name">Gel Off Only <span class="menu-name-ja">ジェルオフのみ</span></span><span class="menu-right"><span class="menu-price">¥4,000</span></span></div>
         </div>
       </div>
@@ -219,11 +226,10 @@ a{text-decoration:none;color:inherit;}
 <div class="book-banner">
   <div>
     <div class="book-banner-title">Instagram で予約する</div>
-    <div class="book-banner-sub">完全予約制。Instagramのメッセージよりご予約ください。<br>Fully by appointment. DM us on Instagram to book.</div>
+    <div class="book-banner-sub">完全予約制。Instagramのメッセージよりご予約ください。<br>DM us on Instagram to book.</div>
   </div>
   <div class="book-banner-actions">
     <a class="btn-primary" href="https://www.instagram.com/sabotenNAILSALON/" target="_blank">@sabotenNAILSALON</a>
-    <a class="btn-ghost" href="access.html">お問い合わせ</a>
   </div>
 </div>
 

@@ -4,144 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SABOTEN TATTOO PARLOR — Tokyo, Akasaka</title>
-<meta name="description" content="東京・赤坂のタトゥースタジオ。多国籍のアーティスト20名以上が在籍するクリエイティブクルー。SABOTEN TATTOO PARLOR / NAIL / WORKS">
+<meta name="description" content="東京・赤坂のタトゥースタジオ。多国籍のアーティスト20名以上が在籍するクリエイティブクルー。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #0c0c0c;
-  --white: #e8e8e8;
+  --white: #f0f0f0;
   --green: #7fff6a;
   --green-dim: rgba(127,255,106,0.7);
-  --green-border: rgba(127,255,106,0.25);
+  --green-border: rgba(127,255,106,0.3);
   --line: rgba(255,255,255,0.08);
   --line-soft: rgba(255,255,255,0.06);
-  --text-muted: rgba(255,255,255,0.55);
-  --text-dim: rgba(255,255,255,0.35);
-  --text-faint: rgba(255,255,255,0.2);
-  --bebas: 'Bebas Neue', sans-serif;
+  --text-muted: rgba(255,255,255,0.6);
+  --text-dim: rgba(255,255,255,0.4);
+  --logo: 'Barlow Condensed', sans-serif;
   --noto: 'Noto Sans JP', sans-serif;
   --inter: 'Inter', sans-serif;
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { font-size:16px; scroll-behavior:smooth; }
-body { background:var(--black); color:var(--white); font-family:var(--noto); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
 
-/* NAV */
-.nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:0 48px; height:64px; border-bottom:0.5px solid var(--line); background:rgba(12,12,12,0.95); backdrop-filter:blur(12px); }
-.nav-logo { font-family:var(--bebas); font-size:20px; letter-spacing:0.25em; color:#fff; line-height:1; }
-.nav-logo span { display:block; font-family:var(--noto); font-size:8px; font-weight:300; letter-spacing:0.2em; color:rgba(255,255,255,0.5); margin-top:2px; }
-.nav-links { display:flex; gap:36px; list-style:none; }
-.nav-links a { font-family:var(--inter); font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); text-transform:uppercase; transition:color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color:#fff; }
-.nav-lang { display:flex; gap:12px; }
-.nav-lang span { font-family:var(--inter); font-size:9px; letter-spacing:0.12em; color:var(--text-dim); cursor:pointer; transition:color 0.2s; }
-.nav-lang span.active { color:var(--green); }
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:68px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
 
-/* HERO */
-.hero { display:grid; grid-template-columns:1.1fr 0.9fr; min-height:100vh; padding-top:64px; }
-.hero-left { padding:64px 48px 56px; display:flex; flex-direction:column; justify-content:space-between; border-right:0.5px solid var(--line-soft); }
-.hero-title-jp { font-family:var(--noto); font-weight:500; font-size:40px; line-height:1.25; color:#fff; }
-.hero-title-jp em { font-style:normal; color:var(--green); }
-.hero-title-en { font-family:var(--bebas); font-size:64px; line-height:0.9; color:rgba(255,255,255,0.08); letter-spacing:0.04em; margin-top:10px; }
-.hero-desc { font-size:12px; line-height:2.1; color:rgba(255,255,255,0.55); font-weight:300; max-width:340px; margin-top:28px; letter-spacing:0.04em; }
-.hero-cta { display:flex; gap:16px; align-items:center; margin-top:40px; flex-wrap:wrap; }
-.btn-primary { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--black); background:var(--green); padding:14px 32px; display:inline-block; transition:opacity 0.2s; }
-.btn-primary:hover { opacity:0.85; }
-.btn-ghost { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.55); border:0.5px solid rgba(255,255,255,0.2); padding:13px 28px; display:inline-flex; align-items:center; gap:8px; transition:color 0.2s, border-color 0.2s; }
-.btn-ghost:hover { color:#fff; border-color:rgba(255,255,255,0.4); }
+.nav-logo{display:flex;flex-direction:column;line-height:1;}
+.nav-logo-main{font-family:var(--logo);font-weight:900;font-size:26px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--logo);font-weight:700;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:1px;}
 
-/* HERO RIGHT */
-.hero-right { display:flex; flex-direction:column; }
-.hero-yt { flex:1; background:#111; position:relative; overflow:hidden; border-bottom:0.5px solid var(--line-soft); min-height:200px; }
-.hero-yt iframe { width:100%; height:100%; position:absolute; top:0; left:0; border:none; pointer-events:none; }
-.hero-yt-label { position:absolute; bottom:14px; left:16px; font-family:var(--inter); font-size:8px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); text-transform:uppercase; z-index:2; pointer-events:none; }
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-lang{display:flex;gap:10px;}
+.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.3);cursor:pointer;transition:color 0.2s;}
+.nav-lang span.active{color:var(--green);}
 
-/* SERVICES */
-.services { display:grid; grid-template-columns:repeat(5,1fr); border-top:0.5px solid var(--line); }
-.service-item { padding:24px 24px; border-right:0.5px solid var(--line-soft); cursor:pointer; transition:background 0.3s; text-decoration:none; display:block; color:inherit; }
-.service-item:last-child { border-right:none; }
-.service-item:hover { background:rgba(255,255,255,0.025); }
-.service-num { font-family:var(--inter); font-size:9px; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:12px; }
-.service-name-jp { font-size:13px; font-weight:500; color:rgba(255,255,255,0.9); letter-spacing:0.05em; margin-bottom:2px; }
-.service-name-en { font-family:var(--bebas); font-size:11px; letter-spacing:0.12em; color:var(--green); opacity:0.7; margin-bottom:10px; }
-.service-desc { font-size:10px; line-height:1.8; color:rgba(255,255,255,0.4); font-weight:300; }
-.service-arrow { margin-top:14px; font-size:14px; color:rgba(255,255,255,0.25); }
+/* ===== HERO ===== */
+.hero{min-height:100vh;padding-top:68px;display:flex;flex-direction:column;}
+.hero-main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px - 240px);}
+.hero-left{padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid var(--line-soft);}
 
-/* NIKERATA BANNER */
-.nikerata-banner { border-top:0.5px solid var(--line); padding:20px 40px; display:flex; justify-content:space-between; align-items:center; text-decoration:none; color:inherit; transition:background 0.2s; }
-.nikerata-banner:hover { background:rgba(255,255,255,0.02); }
-.nikerata-left { display:flex; align-items:center; gap:20px; }
-.nikerata-label { font-family:var(--inter); font-size:8px; letter-spacing:0.2em; color:var(--text-dim); text-transform:uppercase; margin-bottom:4px; }
-.nikerata-name { font-family:var(--bebas); font-size:24px; letter-spacing:0.12em; color:#fff; }
-.nikerata-desc { font-size:10px; color:rgba(255,255,255,0.4); font-weight:300; }
-.nikerata-arrow { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; color:var(--green); }
+.hero-headline{font-family:var(--logo);font-weight:900;font-size:80px;line-height:0.92;letter-spacing:0.03em;color:#fff;text-transform:uppercase;}
+.hero-headline em{font-style:normal;color:var(--green);}
 
-/* FOOTER */
-.footer { border-top:0.5px solid var(--line-soft); padding:16px 48px; display:flex; justify-content:space-between; align-items:center; }
-.footer-addr { font-family:var(--inter); font-size:9px; letter-spacing:0.13em; color:rgba(255,255,255,0.3); }
-.footer-sns { display:flex; gap:20px; }
-.footer-sns a { font-family:var(--inter); font-size:9px; letter-spacing:0.15em; color:rgba(255,255,255,0.3); text-transform:uppercase; transition:color 0.2s; }
-.footer-sns a:hover { color:#fff; }
+.hero-desc{font-size:12px;line-height:2;color:rgba(255,255,255,0.55);font-weight:300;max-width:360px;margin-top:24px;}
 
-/* MOBILE */
-.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
-.nav-hamburger span { display:block; width:22px; height:1px; background:rgba(255,255,255,0.6); }
-.nav-mobile-menu { display:none; position:fixed; top:56px; left:0; right:0; bottom:0; background:var(--black); z-index:99; flex-direction:column; padding:40px 24px; gap:8px; border-top:0.5px solid var(--line); overflow-y:auto; }
-.nav-mobile-menu.open { display:flex; }
-.nav-mobile-menu a { font-family:var(--bebas); font-size:36px; letter-spacing:0.08em; color:rgba(255,255,255,0.5); padding:12px 0; border-bottom:0.5px solid var(--line-soft); transition:color 0.2s; }
-.nav-mobile-menu a:hover { color:#fff; }
-.nav-mobile-lang { display:flex; gap:16px; margin-top:24px; }
-.nav-mobile-lang span { font-family:var(--inter); font-size:10px; letter-spacing:0.15em; color:var(--text-dim); cursor:pointer; }
-.nav-mobile-lang span.active { color:var(--green); }
+.hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:15px 36px;display:inline-block;transition:opacity 0.2s;font-weight:500;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
 
-@media (max-width:768px) {
-  .nav { padding:0 20px; height:56px; }
-  .nav-links, .nav-lang { display:none; }
-  .nav-hamburger { display:flex; }
-  .hero { grid-template-columns:1fr; min-height:auto; padding-top:56px; }
-  .hero-left { padding:32px 20px 28px; border-right:none; border-bottom:0.5px solid var(--line-soft); }
-  .hero-title-jp { font-size:30px; }
-  .hero-title-en { font-size:52px; }
-  .hero-right { order:-1; }
-  .hero-yt { height:220px; flex:none; }
-  .services { grid-template-columns:1fr 1fr; }
-  .service-item { border-bottom:0.5px solid var(--line-soft); padding:18px; }
-  .service-item:nth-child(2n) { border-right:none; }
-  .nikerata-banner { padding:16px 20px; }
-  .footer { flex-direction:column; gap:10px; padding:16px 20px; text-align:center; }
+.hero-right{background:#111;position:relative;overflow:hidden;}
+.hero-right iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none;}
+.hero-yt-label{position:absolute;bottom:14px;left:16px;font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:rgba(255,255,255,0.3);text-transform:uppercase;z-index:2;}
+
+/* ===== YOUTUBE SECTION ===== */
+.yt-section{border-top:0.5px solid var(--line-soft);padding:48px;}
+.yt-section-label{font-family:var(--inter);font-size:9px;letter-spacing:0.22em;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;}
+.yt-embed{position:relative;width:100%;padding-bottom:56.25%;background:#111;overflow:hidden;}
+.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+
+/* ===== SERVICES ===== */
+.services{border-top:0.5px solid var(--line);}
+.services-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+.svc{padding:24px 28px;border-right:0.5px solid var(--line-soft);display:block;text-decoration:none;color:inherit;transition:background 0.25s;}
+.svc:last-child{border-right:none;}
+.svc:hover{background:rgba(255,255,255,0.03);}
+.svc-name{font-family:var(--logo);font-weight:800;font-size:20px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;margin-bottom:8px;line-height:1;}
+.svc-desc{font-size:10px;line-height:1.7;color:rgba(255,255,255,0.45);font-weight:300;}
+.svc-btn{display:inline-block;margin-top:14px;font-family:var(--inter);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:8px 16px;transition:opacity 0.2s;}
+.svc:hover .svc-btn{opacity:0.85;}
+
+/* ===== NIKERATA ===== */
+.nikerata{border-top:0.5px solid var(--line);display:grid;grid-template-columns:1fr 1fr;}
+.nikerata-left{padding:32px 48px;border-right:0.5px solid var(--line-soft);display:flex;align-items:center;gap:32px;}
+.nikerata-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
+.nikerata-name{font-family:var(--logo);font-weight:900;font-size:36px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
+.nikerata-right{padding:32px 48px;display:flex;align-items:center;}
+.nikerata-desc{font-size:11px;line-height:1.9;color:rgba(255,255,255,0.45);font-weight:300;}
+
+/* ===== REALESTATE ===== */
+.realestate{border-top:0.5px solid var(--line);display:grid;grid-template-columns:1fr 1fr;}
+.realestate-left{padding:32px 48px;border-right:0.5px solid var(--line-soft);display:flex;align-items:center;gap:32px;}
+.realestate-name{font-family:var(--logo);font-weight:900;font-size:36px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
+.realestate-right{padding:32px 48px;display:flex;align-items:center;}
+.realestate-desc{font-size:11px;line-height:1.9;color:rgba(255,255,255,0.45);font-weight:300;}
+
+/* ===== FOOTER ===== */
+.footer{border-top:0.5px solid var(--line-soft);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;}
+.footer-addr{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.28);}
+.footer-sns{display:flex;gap:20px;}
+.footer-sns a{font-family:var(--inter);font-size:9px;letter-spacing:0.14em;color:rgba(255,255,255,0.28);text-transform:uppercase;transition:color 0.2s;}
+.footer-sns a:hover{color:#fff;}
+
+/* ===== MOBILE NAV ===== */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+.nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{font-family:var(--logo);font-weight:800;font-size:32px;letter-spacing:0.08em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a:hover{color:#fff;}
+.nav-mobile-lang{display:flex;gap:16px;margin-top:20px;}
+.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
+.nav-mobile-lang span.active{color:var(--green);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav{padding:0 20px;height:60px;}
+  .nav-links,.nav-lang{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-logo-main{font-size:22px;}
+  .nav-mobile-menu{top:60px;}
+
+  .hero-main{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:32px 20px 28px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
+  .hero-headline{font-size:56px;}
+  .hero-right{height:240px;}
+
+  .yt-section{padding:28px 20px;}
+
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .svc{border-bottom:0.5px solid var(--line-soft);padding:20px;}
+  .svc:nth-child(2n){border-right:none;}
+  .svc:nth-child(5){grid-column:span 2;}
+
+  .nikerata,.realestate{grid-template-columns:1fr;}
+  .nikerata-left,.realestate-left{border-right:none;border-bottom:0.5px solid var(--line-soft);padding:24px 20px;}
+  .nikerata-right,.realestate-right{padding:20px;}
+
+  .footer{flex-direction:column;gap:10px;padding:16px 20px;text-align:center;}
 }
-@media (min-width:769px) {
-  .nav-hamburger { display:none; }
-  .nav-mobile-menu { display:none !important; }
+@media(min-width:769px){
+  .nav-hamburger{display:none;}
+  .nav-mobile-menu{display:none!important;}
 }
 
-.fade-in { opacity:0; transform:translateY(16px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+.fade-in{opacity:0;transform:translateY(14px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <a href="index.html" class="nav-logo">
-    SABOTEN
-    <span>TATTOO PARLOR / NAIL / WORKS</span>
+    <div class="nav-logo-main">SABOTEN</div>
+    <div class="nav-logo-sub">TATTOO · NAIL · FASHION · CREATIVE · REAL ESTATE</div>
   </a>
   <ul class="nav-links">
-    <li><a href="tattoo.html" class="active">Tattoo</a></li>
+    <li><a href="tattoo.html">Tattoo</a></li>
     <li><a href="price.html">Price</a></li>
     <li><a href="nail.html">Nail</a></li>
     <li><a href="works.html">Works</a></li>
-    <li><a href="https://nikerata.com" target="_blank">Shop Nikerata</a></li>
+    <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
   </ul>
   <div class="nav-lang">
-    <span class="active">JP</span>
-    <span>EN</span>
-    <span>ES</span>
-    <span>KO</span>
+    <span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span>
   </div>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -153,89 +176,107 @@ a { text-decoration:none; color:inherit; }
   <a href="price.html" onclick="toggleMenu()">Price</a>
   <a href="nail.html" onclick="toggleMenu()">Nail</a>
   <a href="works.html" onclick="toggleMenu()">Works</a>
-  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Shop Nikerata</a>
+  <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
   <a href="access.html" onclick="toggleMenu()">Access</a>
   <div class="nav-mobile-lang">
     <span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span>
   </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-title-jp fade-in">SABOTEN<br>TATTOO PARLOR</div>
-      <div class="hero-title-en fade-in" style="transition-delay:0.1s;">SABOTEN</div>
-      <p class="hero-desc fade-in" style="transition-delay:0.15s;">
-        東京・赤坂に構える、東京都最大級のタトゥースタジオ。<br>
-        多国籍のアーティスト20名以上が在籍し、<br>
-        バラエティに富んだスタイルに対応しています。
-      </p>
+  <div class="hero-main">
+    <div class="hero-left">
+      <div>
+        <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
+        <p class="hero-desc fade-in" style="transition-delay:0.1s;">
+          東京・赤坂に構える、東京都最大級のタトゥースタジオ。<br>
+          多国籍のアーティスト20名以上が在籍し、<br>
+          バラエティに富んだスタイルに対応しています。
+        </p>
+      </div>
+      <div class="hero-cta fade-in" style="transition-delay:0.15s;">
+        <a class="btn-primary" href="tattoo.html">予約・お問い合わせ</a>
+        <a class="btn-outline" href="tattoo.html">アーティストを見る</a>
+      </div>
     </div>
-    <div class="hero-cta fade-in" style="transition-delay:0.2s;">
-      <a class="btn-primary" href="tattoo.html">予約・お問い合わせ</a>
-      <a class="btn-ghost" href="tattoo.html">アーティストを見る →</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-yt">
-      <iframe
-        src="https://www.youtube.com/embed?listType=user_uploads&list=sabotentattooparlor&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
+    <div class="hero-right">
       <span class="hero-yt-label">Latest — YouTube</span>
     </div>
   </div>
+
+  <!-- SERVICES -->
+  <div class="services">
+    <div class="services-grid">
+      <a class="svc" href="tattoo.html">
+        <div class="svc-name">TATTOO</div>
+        <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
+        <span class="svc-btn">Book</span>
+      </a>
+      <a class="svc" href="nail.html">
+        <div class="svc-name">NAIL</div>
+        <div class="svc-desc">SABOTEN NAIL PARLOR。スタジオ併設のネイルサロン。完全予約制。</div>
+        <span class="svc-btn">Book</span>
+      </a>
+      <a class="svc" href="works.html">
+        <div class="svc-name">CREATIVE</div>
+        <div class="svc-desc">SABOTEN WORKS。映像・写真・ブランディング・クリエイティブ全般。</div>
+        <span class="svc-btn">View</span>
+      </a>
+      <a class="svc" href="https://www.instagram.com/soki_kambara" target="_blank">
+        <div class="svc-name">HAIR</div>
+        <div class="svc-desc">ヘアサロン。スタイリスト @soki_kambara。Instagram より予約受付中。</div>
+        <span class="svc-btn">Book</span>
+      </a>
+      <a class="svc" href="https://www.instagram.com/saboten.realestate" target="_blank">
+        <div class="svc-name">REAL ESTATE</div>
+        <div class="svc-desc">不動産サービス。タトゥーアーティスト・クリエイターのための物件探しをサポート。</div>
+        <span class="svc-btn">View</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section class="services">
-  <a class="service-item" href="tattoo.html">
-    <div class="service-num">01</div>
-    <div class="service-name-jp">タトゥー</div>
-    <div class="service-name-en">TATTOO</div>
-    <div class="service-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
-    <div class="service-arrow">→</div>
-  </a>
-  <a class="service-item" href="nail.html">
-    <div class="service-num">02</div>
-    <div class="service-name-jp">ネイル</div>
-    <div class="service-name-en">NAIL</div>
-    <div class="service-desc">SABOTEN NAIL PARLOR。スタジオ併設のネイルサロン。</div>
-    <div class="service-arrow">→</div>
-  </a>
-  <a class="service-item" href="works.html">
-    <div class="service-num">03</div>
-    <div class="service-name-jp">クリエイティブ</div>
-    <div class="service-name-en">WORKS</div>
-    <div class="service-desc">SABOTEN WORKS。ブランディング・制作・クリエイティブ全般。</div>
-    <div class="service-arrow">→</div>
-  </a>
-  <a class="service-item" href="https://www.instagram.com/soki_kambara" target="_blank">
-    <div class="service-num">04</div>
-    <div class="service-name-jp">ヘアー</div>
-    <div class="service-name-en">HAIR</div>
-    <div class="service-desc">@soki_kambara</div>
-    <div class="service-arrow">↗</div>
-  </a>
-  <a class="service-item" href="https://www.instagram.com/saboten.realestate" target="_blank">
-    <div class="service-num">05</div>
-    <div class="service-name-jp">不動産</div>
-    <div class="service-name-en">REAL ESTATE</div>
-    <div class="service-desc">@saboten.realestate</div>
-    <div class="service-arrow">↗</div>
-  </a>
-</section>
+<!-- YOUTUBE -->
+<div class="yt-section">
+  <div class="yt-section-label">Latest — YouTube</div>
+  <div class="yt-embed">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=UUsabotentattooparlor&autoplay=0&controls=1&modestbranding=1&rel=0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
-<a class="nikerata-banner" href="https://nikerata.com" target="_blank">
+<!-- NIKERATA -->
+<div class="nikerata">
   <div class="nikerata-left">
     <div>
-      <div class="nikerata-label">Select Shop — Online & In Store</div>
+      <div class="nikerata-label">Select Shop</div>
       <div class="nikerata-name">NIKERATA</div>
     </div>
-    <div class="nikerata-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。</div>
+    <a class="btn-primary" href="https://nikerata.com" target="_blank">Shop</a>
   </div>
-  <div class="nikerata-arrow">nikerata.com ↗</div>
-</a>
+  <div class="nikerata-right">
+    <div class="nikerata-desc">セレクトショップ Nikerata。<br>スタジオ併設・オンラインストア。<br><span style="color:rgba(255,255,255,0.28);font-size:10px;">nikerata.com</span></div>
+  </div>
+</div>
+
+<!-- REAL ESTATE -->
+<div class="realestate">
+  <div class="realestate-left">
+    <div>
+      <div class="nikerata-label">Real Estate</div>
+      <div class="realestate-name">SABOTEN<br>REAL ESTATE</div>
+    </div>
+    <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
+  </div>
+  <div class="realestate-right">
+    <div class="realestate-desc">タトゥーアーティスト・ファッションクリエイターのための不動産サービス。<br>一般的な審査が難しい方もお気軽にご相談ください。<br><span style="color:rgba(255,255,255,0.28);font-size:10px;">@saboten.realestate</span></div>
+  </div>
+</div>
 
 <footer class="footer">
   <span class="footer-addr">東京都港区赤坂6-15 赤坂ミツワビル別館3F &nbsp;·&nbsp; 03-6675-2578</span>
@@ -246,17 +287,11 @@ a { text-decoration:none; color:inherit; }
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold:0.1 });
-fadeEls.forEach(el => observer.observe(el));
-setTimeout(() => {
-  fadeEls.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
-}, 100);
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const fadeEls=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+fadeEls.forEach(el=>observer.observe(el));
+setTimeout(()=>{fadeEls.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');});},100);
 </script>
 </body>
 </html>

@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Access — SABOTEN TATTOO PARLOR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--bebas:'Bebas Neue',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--logo:'Barlow Condensed',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.92);backdrop-filter:blur(12px);}
-.nav-logo{font-family:var(--bebas);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
+.nav-logo{font-family:var(--logo);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
 .nav-logo span{display:block;font-family:var(--noto);font-size:8px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-top:2px;}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;transition:color 0.2s;}
@@ -25,14 +25,14 @@ a{text-decoration:none;color:inherit;}
 .nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
 
 .ph{padding:96px 48px 28px;border-bottom:0.5px solid var(--line-soft);}
-.ph-title{font-family:var(--bebas);font-size:48px;letter-spacing:0.06em;color:#fff;line-height:1;}
+.ph-title{font-family:var(--logo);font-size:48px;letter-spacing:0.06em;color:#fff;line-height:1;}
 .ph-title small{display:block;font-family:var(--noto);font-size:10px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-bottom:6px;}
 
 .access-grid{display:grid;grid-template-columns:1fr 1fr;}
 .map-area{border-right:0.5px solid var(--line-soft);background:#141414;position:relative;min-height:480px;overflow:hidden;}
 .map-area iframe{width:100%;height:100%;border:none;position:absolute;inset:0;filter:grayscale(100%) invert(90%) contrast(88%);}
 .map-label{position:absolute;bottom:16px;left:16px;background:rgba(12,12,12,0.92);padding:10px 16px;backdrop-filter:blur(8px);}
-.map-label-name{font-family:var(--bebas);font-size:14px;letter-spacing:0.1em;color:#fff;}
+.map-label-name{font-family:var(--logo);font-size:14px;letter-spacing:0.1em;color:#fff;}
 .map-label-addr{font-family:var(--inter);font-size:8px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-top:2px;}
 
 .info-area{padding:0;}
@@ -57,12 +57,12 @@ a{text-decoration:none;color:inherit;}
 .cta-item:last-child{border-right:none;}
 .cta-item:hover{background:rgba(255,255,255,0.02);}
 .cta-label{font-family:var(--inter);font-size:8px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
-.cta-title{font-family:var(--bebas);font-size:22px;letter-spacing:0.08em;color:#fff;}
+.cta-title{font-family:var(--logo);font-size:22px;letter-spacing:0.08em;color:#fff;}
 .cta-arrow{font-size:20px;color:var(--text-faint);}
 
 .nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--bebas);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.nav-mobile-menu a{font-family:var(--logo);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
 .nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
 .nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
 .nav-mobile-lang span.active{color:var(--green);}
@@ -85,7 +85,10 @@ a{text-decoration:none;color:inherit;}
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo">SABOTEN<span>TATTOO PARLOR / NAIL / WORKS</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-main">SABOTEN</div>
+    <div class="nav-logo-sub">TATTOO · NAIL · FASHION · CREATIVE · REAL ESTATE</div>
+  </a>
   <ul class="nav-links">
     <li><a href="tattoo.html">Tattoo</a></li><li><a href="price.html">Price</a></li>
     <li><a href="nail.html">Nail</a></li><li><a href="works.html">Works</a></li>
