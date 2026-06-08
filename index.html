@@ -13,515 +13,117 @@
   --black: #0c0c0c;
   --white: #e8e8e8;
   --green: #7fff6a;
-  --green-dim: rgba(127,255,106,0.6);
+  --green-dim: rgba(127,255,106,0.7);
   --green-border: rgba(127,255,106,0.25);
   --line: rgba(255,255,255,0.08);
   --line-soft: rgba(255,255,255,0.06);
-  --text-muted: rgba(255,255,255,0.4);
-  --text-dim: rgba(255,255,255,0.22);
-  --text-faint: rgba(255,255,255,0.12);
+  --text-muted: rgba(255,255,255,0.55);
+  --text-dim: rgba(255,255,255,0.35);
+  --text-faint: rgba(255,255,255,0.2);
   --bebas: 'Bebas Neue', sans-serif;
   --noto: 'Noto Sans JP', sans-serif;
   --inter: 'Inter', sans-serif;
 }
-
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-
 html { font-size:16px; scroll-behavior:smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--noto);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
+body { background:var(--black); color:var(--white); font-family:var(--noto); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 
-/* ===================== NAV ===================== */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 48px;
-  height: 64px;
-  border-bottom: 0.5px solid var(--line);
-  background: rgba(12,12,12,0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+/* NAV */
+.nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:0 48px; height:64px; border-bottom:0.5px solid var(--line); background:rgba(12,12,12,0.95); backdrop-filter:blur(12px); }
+.nav-logo { font-family:var(--bebas); font-size:20px; letter-spacing:0.25em; color:#fff; line-height:1; }
+.nav-logo span { display:block; font-family:var(--noto); font-size:8px; font-weight:300; letter-spacing:0.2em; color:rgba(255,255,255,0.5); margin-top:2px; }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { font-family:var(--inter); font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); text-transform:uppercase; transition:color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:#fff; }
+.nav-lang { display:flex; gap:12px; }
+.nav-lang span { font-family:var(--inter); font-size:9px; letter-spacing:0.12em; color:var(--text-dim); cursor:pointer; transition:color 0.2s; }
+.nav-lang span.active { color:var(--green); }
 
-.nav-logo {
-  font-family: var(--bebas);
-  font-size: 20px;
-  letter-spacing: 0.25em;
-  color: #fff;
-  line-height: 1;
-}
-
-.nav-logo span {
-  display: block;
-  font-family: var(--noto);
-  font-size: 8px;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  color: var(--text-dim);
-  margin-top: 2px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: var(--inter);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: #fff; }
-.nav-links a.active { color: #fff; }
-
-.nav-lang {
-  display: flex;
-  gap: 12px;
-}
-
-.nav-lang span {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  color: var(--text-dim);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.nav-lang span.active { color: var(--green); }
-
-/* ===================== HERO ===================== */
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  min-height: 100vh;
-  padding-top: 64px;
-}
-
-.hero-left {
-  padding: 64px 48px 56px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 0.5px solid var(--line-soft);
-}
-
-.hero-eyebrow {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-.hero-title-jp {
-  font-family: var(--noto);
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 1.3;
-  color: #fff;
-  letter-spacing: -0.01em;
-}
-
-.hero-title-jp em {
-  font-style: normal;
-  color: var(--green);
-}
-
-.hero-title-en {
-  font-family: var(--bebas);
-  font-size: 72px;
-  line-height: 0.9;
-  color: rgba(255,255,255,0.07);
-  letter-spacing: 0.04em;
-  margin-top: 12px;
-}
-
-.hero-desc {
-  font-size: 11px;
-  line-height: 2.1;
-  color: var(--text-muted);
-  font-weight: 300;
-  max-width: 340px;
-  margin-top: 28px;
-  letter-spacing: 0.05em;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  border: 0.5px solid var(--green-border);
-  padding: 6px 14px;
-  width: fit-content;
-}
-
-.hero-badge-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-.hero-badge span {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--green-dim);
-  text-transform: uppercase;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.btn-primary {
-  font-family: var(--inter);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--black);
-  background: var(--green);
-  padding: 13px 28px;
-  display: inline-block;
-  transition: opacity 0.2s;
-}
-
-.btn-primary:hover { opacity: 0.85; }
-
-.btn-ghost {
-  font-family: var(--inter);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  border: 0.5px solid rgba(255,255,255,0.15);
-  padding: 12px 24px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+/* HERO */
+.hero { display:grid; grid-template-columns:1.1fr 0.9fr; min-height:100vh; padding-top:64px; }
+.hero-left { padding:64px 48px 56px; display:flex; flex-direction:column; justify-content:space-between; border-right:0.5px solid var(--line-soft); }
+.hero-title-jp { font-family:var(--noto); font-weight:500; font-size:40px; line-height:1.25; color:#fff; }
+.hero-title-jp em { font-style:normal; color:var(--green); }
+.hero-title-en { font-family:var(--bebas); font-size:64px; line-height:0.9; color:rgba(255,255,255,0.08); letter-spacing:0.04em; margin-top:10px; }
+.hero-desc { font-size:12px; line-height:2.1; color:rgba(255,255,255,0.55); font-weight:300; max-width:340px; margin-top:28px; letter-spacing:0.04em; }
+.hero-cta { display:flex; gap:16px; align-items:center; margin-top:40px; flex-wrap:wrap; }
+.btn-primary { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--black); background:var(--green); padding:14px 32px; display:inline-block; transition:opacity 0.2s; }
+.btn-primary:hover { opacity:0.85; }
+.btn-ghost { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.55); border:0.5px solid rgba(255,255,255,0.2); padding:13px 28px; display:inline-flex; align-items:center; gap:8px; transition:color 0.2s, border-color 0.2s; }
+.btn-ghost:hover { color:#fff; border-color:rgba(255,255,255,0.4); }
 
 /* HERO RIGHT */
-.hero-right {
-  display: flex;
-  flex-direction: column;
+.hero-right { display:flex; flex-direction:column; }
+.hero-yt { flex:1; background:#111; position:relative; overflow:hidden; border-bottom:0.5px solid var(--line-soft); min-height:200px; }
+.hero-yt iframe { width:100%; height:100%; position:absolute; top:0; left:0; border:none; pointer-events:none; }
+.hero-yt-label { position:absolute; bottom:14px; left:16px; font-family:var(--inter); font-size:8px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); text-transform:uppercase; z-index:2; pointer-events:none; }
+
+/* SERVICES */
+.services { display:grid; grid-template-columns:repeat(5,1fr); border-top:0.5px solid var(--line); }
+.service-item { padding:24px 24px; border-right:0.5px solid var(--line-soft); cursor:pointer; transition:background 0.3s; text-decoration:none; display:block; color:inherit; }
+.service-item:last-child { border-right:none; }
+.service-item:hover { background:rgba(255,255,255,0.025); }
+.service-num { font-family:var(--inter); font-size:9px; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:12px; }
+.service-name-jp { font-size:13px; font-weight:500; color:rgba(255,255,255,0.9); letter-spacing:0.05em; margin-bottom:2px; }
+.service-name-en { font-family:var(--bebas); font-size:11px; letter-spacing:0.12em; color:var(--green); opacity:0.7; margin-bottom:10px; }
+.service-desc { font-size:10px; line-height:1.8; color:rgba(255,255,255,0.4); font-weight:300; }
+.service-arrow { margin-top:14px; font-size:14px; color:rgba(255,255,255,0.25); }
+
+/* NIKERATA BANNER */
+.nikerata-banner { border-top:0.5px solid var(--line); padding:20px 40px; display:flex; justify-content:space-between; align-items:center; text-decoration:none; color:inherit; transition:background 0.2s; }
+.nikerata-banner:hover { background:rgba(255,255,255,0.02); }
+.nikerata-left { display:flex; align-items:center; gap:20px; }
+.nikerata-label { font-family:var(--inter); font-size:8px; letter-spacing:0.2em; color:var(--text-dim); text-transform:uppercase; margin-bottom:4px; }
+.nikerata-name { font-family:var(--bebas); font-size:24px; letter-spacing:0.12em; color:#fff; }
+.nikerata-desc { font-size:10px; color:rgba(255,255,255,0.4); font-weight:300; }
+.nikerata-arrow { font-family:var(--inter); font-size:11px; letter-spacing:0.15em; color:var(--green); }
+
+/* FOOTER */
+.footer { border-top:0.5px solid var(--line-soft); padding:16px 48px; display:flex; justify-content:space-between; align-items:center; }
+.footer-addr { font-family:var(--inter); font-size:9px; letter-spacing:0.13em; color:rgba(255,255,255,0.3); }
+.footer-sns { display:flex; gap:20px; }
+.footer-sns a { font-family:var(--inter); font-size:9px; letter-spacing:0.15em; color:rgba(255,255,255,0.3); text-transform:uppercase; transition:color 0.2s; }
+.footer-sns a:hover { color:#fff; }
+
+/* MOBILE */
+.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
+.nav-hamburger span { display:block; width:22px; height:1px; background:rgba(255,255,255,0.6); }
+.nav-mobile-menu { display:none; position:fixed; top:56px; left:0; right:0; bottom:0; background:var(--black); z-index:99; flex-direction:column; padding:40px 24px; gap:8px; border-top:0.5px solid var(--line); overflow-y:auto; }
+.nav-mobile-menu.open { display:flex; }
+.nav-mobile-menu a { font-family:var(--bebas); font-size:36px; letter-spacing:0.08em; color:rgba(255,255,255,0.5); padding:12px 0; border-bottom:0.5px solid var(--line-soft); transition:color 0.2s; }
+.nav-mobile-menu a:hover { color:#fff; }
+.nav-mobile-lang { display:flex; gap:16px; margin-top:24px; }
+.nav-mobile-lang span { font-family:var(--inter); font-size:10px; letter-spacing:0.15em; color:var(--text-dim); cursor:pointer; }
+.nav-mobile-lang span.active { color:var(--green); }
+
+@media (max-width:768px) {
+  .nav { padding:0 20px; height:56px; }
+  .nav-links, .nav-lang { display:none; }
+  .nav-hamburger { display:flex; }
+  .hero { grid-template-columns:1fr; min-height:auto; padding-top:56px; }
+  .hero-left { padding:32px 20px 28px; border-right:none; border-bottom:0.5px solid var(--line-soft); }
+  .hero-title-jp { font-size:30px; }
+  .hero-title-en { font-size:52px; }
+  .hero-right { order:-1; }
+  .hero-yt { height:220px; flex:none; }
+  .services { grid-template-columns:1fr 1fr; }
+  .service-item { border-bottom:0.5px solid var(--line-soft); padding:18px; }
+  .service-item:nth-child(2n) { border-right:none; }
+  .nikerata-banner { padding:16px 20px; }
+  .footer { flex-direction:column; gap:10px; padding:16px 20px; text-align:center; }
+}
+@media (min-width:769px) {
+  .nav-hamburger { display:none; }
+  .nav-mobile-menu { display:none !important; }
 }
 
-.hero-yt {
-  flex: 1;
-  background: #111;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 0.5px solid var(--line-soft);
-}
-
-.hero-yt iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0; left: 0;
-  border: none;
-  pointer-events: none;
-}
-
-.hero-yt-label {
-  position: absolute;
-  bottom: 14px;
-  left: 16px;
-  font-family: var(--inter);
-  font-size: 8px;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
-  text-transform: uppercase;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.hero-stat {
-  padding: 20px 24px;
-  border-right: 0.5px solid var(--line-soft);
-}
-
-.hero-stat:last-child { border-right: none; }
-
-.hero-stat-num {
-  font-family: var(--bebas);
-  font-size: 28px;
-  color: var(--green);
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
-.hero-stat-label {
-  font-family: var(--inter);
-  font-size: 8px;
-  letter-spacing: 0.15em;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-
-/* ===================== SERVICES ===================== */
-.services {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 0.5px solid var(--line);
-}
-
-.service-item {
-  padding: 28px 32px;
-  border-right: 0.5px solid var(--line-soft);
-  cursor: pointer;
-  transition: background 0.3s;
-  text-decoration: none;
-  display: block;
-  color: inherit;
-}
-
-.service-item:last-child { border-right: none; }
-.service-item:hover { background: rgba(255,255,255,0.025); }
-
-.service-num {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: var(--text-faint);
-  margin-bottom: 14px;
-}
-
-.service-name-jp {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--white);
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-
-.service-name-en {
-  font-family: var(--bebas);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  color: var(--green);
-  opacity: 0.6;
-  margin-bottom: 12px;
-}
-
-.service-desc {
-  font-size: 10px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.26);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-}
-
-.service-arrow {
-  margin-top: 18px;
-  font-size: 14px;
-  color: var(--text-faint);
-}
-
-/* ===================== FOOTER ===================== */
-.footer {
-  border-top: 0.5px solid var(--line-soft);
-  padding: 16px 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-addr {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.13em;
-  color: rgba(255,255,255,0.18);
-}
-
-.footer-sns {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-sns a {
-  font-family: var(--inter);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.18);
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-
-.footer-sns a:hover { color: #fff; }
-
-/* ===================== MOBILE ===================== */
-@media (max-width: 768px) {
-  .nav {
-    padding: 0 20px;
-    height: 56px;
-  }
-
-  .nav-links { display: none; }
-
-  .nav-hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 8px;
-  }
-
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 1px;
-    background: rgba(255,255,255,0.6);
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding-top: 56px;
-  }
-
-  .hero-left {
-    padding: 40px 20px 36px;
-    border-right: none;
-    border-bottom: 0.5px solid var(--line-soft);
-  }
-
-  .hero-title-jp { font-size: 32px; }
-  .hero-title-en { font-size: 52px; }
-
-  .hero-right { order: -1; }
-
-  .hero-yt {
-    height: 240px;
-    flex: none;
-  }
-
-  .hero-stats { grid-template-columns: repeat(3,1fr); }
-  .hero-stat { padding: 14px 16px; }
-  .hero-stat-num { font-size: 22px; }
-
-  .services {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .service-item {
-    padding: 20px;
-    border-bottom: 0.5px solid var(--line-soft);
-  }
-
-  .service-item:nth-child(2n) { border-right: none; }
-
-  .footer {
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-    text-align: center;
-  }
-
-  /* MOBILE NAV MENU */
-  .nav-mobile-menu {
-    display: none;
-    position: fixed;
-    top: 56px; left: 0; right: 0; bottom: 0;
-    background: var(--black);
-    z-index: 99;
-    flex-direction: column;
-    padding: 40px 24px;
-    gap: 8px;
-    border-top: 0.5px solid var(--line);
-  }
-
-  .nav-mobile-menu.open { display: flex; }
-
-  .nav-mobile-menu a {
-    font-family: var(--bebas);
-    font-size: 36px;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.4);
-    padding: 12px 0;
-    border-bottom: 0.5px solid var(--line-soft);
-    transition: color 0.2s;
-  }
-
-  .nav-mobile-menu a:hover { color: #fff; }
-
-  .nav-mobile-lang {
-    display: flex;
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .nav-mobile-lang span {
-    font-family: var(--inter);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: var(--text-dim);
-    cursor: pointer;
-  }
-
-  .nav-mobile-lang span.active { color: var(--green); }
-}
-
-@media (min-width: 769px) {
-  .nav-hamburger { display: none; }
-  .nav-mobile-menu { display: none !important; }
-}
-
-/* ===================== FADE IN ===================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-in { opacity:0; transform:translateY(16px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     SABOTEN
@@ -532,7 +134,7 @@ a { text-decoration:none; color:inherit; }
     <li><a href="price.html">Price</a></li>
     <li><a href="nail.html">Nail</a></li>
     <li><a href="works.html">Works</a></li>
-    <li><a href="https://nikerata.com" target="_blank">Shop</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Shop Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
   </ul>
   <div class="nav-lang">
@@ -546,45 +148,34 @@ a { text-decoration:none; color:inherit; }
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
   <a href="price.html" onclick="toggleMenu()">Price</a>
   <a href="nail.html" onclick="toggleMenu()">Nail</a>
   <a href="works.html" onclick="toggleMenu()">Works</a>
-  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Shop</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Shop Nikerata</a>
   <a href="access.html" onclick="toggleMenu()">Access</a>
   <div class="nav-mobile-lang">
-    <span class="active">JP</span>
-    <span>EN</span>
-    <span>ES</span>
-    <span>KO</span>
+    <span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div>
-      <div class="hero-eyebrow fade-in">Tokyo — Akasaka · Tattoo Studio</div>
-      <div class="hero-title-jp fade-in" style="transition-delay:0.1s;">ファッションとしての<br><em>タトゥー</em>を。</div>
-      <div class="hero-title-en fade-in" style="transition-delay:0.15s;">SABOTEN</div>
-      <p class="hero-desc fade-in" style="transition-delay:0.2s;">
+      <div class="hero-title-jp fade-in">SABOTEN<br>TATTOO PARLOR</div>
+      <div class="hero-title-en fade-in" style="transition-delay:0.1s;">SABOTEN</div>
+      <p class="hero-desc fade-in" style="transition-delay:0.15s;">
         東京・赤坂に構える、東京都最大級のタトゥースタジオ。<br>
         多国籍のアーティスト20名以上が在籍し、<br>
         バラエティに富んだスタイルに対応しています。
       </p>
-      <div class="hero-badge fade-in" style="transition-delay:0.25s;">
-        <div class="hero-badge-dot"></div>
-        <span>Multinational artist collective — Akasaka, Tokyo</span>
-      </div>
     </div>
-    <div class="hero-cta fade-in" style="transition-delay:0.3s;">
+    <div class="hero-cta fade-in" style="transition-delay:0.2s;">
       <a class="btn-primary" href="tattoo.html">予約・お問い合わせ</a>
       <a class="btn-ghost" href="tattoo.html">アーティストを見る →</a>
     </div>
   </div>
-
   <div class="hero-right">
     <div class="hero-yt">
       <iframe
@@ -594,24 +185,9 @@ a { text-decoration:none; color:inherit; }
       </iframe>
       <span class="hero-yt-label">Latest — YouTube</span>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">14</div>
-        <div class="hero-stat-label">Booths</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">20+</div>
-        <div class="hero-stat-label">Artists</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">Akasaka</div>
-        <div class="hero-stat-label">Tokyo, Japan</div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
   <a class="service-item" href="tattoo.html">
     <div class="service-num">01</div>
@@ -634,16 +210,33 @@ a { text-decoration:none; color:inherit; }
     <div class="service-desc">SABOTEN WORKS。ブランディング・制作・クリエイティブ全般。</div>
     <div class="service-arrow">→</div>
   </a>
-  <a class="service-item" href="https://nikerata.com" target="_blank">
+  <a class="service-item" href="https://www.instagram.com/soki_kambara" target="_blank">
     <div class="service-num">04</div>
-    <div class="service-name-jp">アパレル</div>
-    <div class="service-name-en">SHOP</div>
-    <div class="service-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。</div>
+    <div class="service-name-jp">ヘアー</div>
+    <div class="service-name-en">HAIR</div>
+    <div class="service-desc">@soki_kambara</div>
+    <div class="service-arrow">↗</div>
+  </a>
+  <a class="service-item" href="https://www.instagram.com/saboten.realestate" target="_blank">
+    <div class="service-num">05</div>
+    <div class="service-name-jp">不動産</div>
+    <div class="service-name-en">REAL ESTATE</div>
+    <div class="service-desc">@saboten.realestate</div>
     <div class="service-arrow">↗</div>
   </a>
 </section>
 
-<!-- FOOTER -->
+<a class="nikerata-banner" href="https://nikerata.com" target="_blank">
+  <div class="nikerata-left">
+    <div>
+      <div class="nikerata-label">Select Shop — Online & In Store</div>
+      <div class="nikerata-name">NIKERATA</div>
+    </div>
+    <div class="nikerata-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。</div>
+  </div>
+  <div class="nikerata-arrow">nikerata.com ↗</div>
+</a>
+
 <footer class="footer">
   <span class="footer-addr">東京都港区赤坂6-15 赤坂ミツワビル別館3F &nbsp;·&nbsp; 03-6675-2578</span>
   <div class="footer-sns">
@@ -653,31 +246,16 @@ a { text-decoration:none; color:inherit; }
 </footer>
 
 <script>
-// MOBILE MENU
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
-
-// FADE IN ON SCROLL
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold:0.1 });
 fadeEls.forEach(el => observer.observe(el));
-
-// Trigger immediately for above-fold elements
 setTimeout(() => {
-  fadeEls.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('visible');
-    }
-  });
+  fadeEls.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
 }, 100);
 </script>
 </body>
