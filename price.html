@@ -5,99 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Price — SABOTEN TATTOO PARLOR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --black:#0c0c0c; --white:#e8e8e8; --green:#7fff6a; --green-dim:rgba(127,255,106,0.6);
-  --green-border:rgba(127,255,106,0.25); --line:rgba(255,255,255,0.08); --line-soft:rgba(255,255,255,0.06);
-  --text-muted:rgba(255,255,255,0.55); --text-dim:rgba(255,255,255,0.35); --text-faint:rgba(255,255,255,0.2);
-  --logo:'Barlow Condensed',sans-serif; --noto:'Noto Sans JP',sans-serif; --inter:'Inter',sans-serif;
+:root{
+  --black:#0c0c0c; --white:#f0f0f0; --green:#7fff6a;
+  --line:rgba(255,255,255,0.08); --line-soft:rgba(255,255,255,0.06);
+  --text-muted:rgba(255,255,255,0.65); --text-dim:rgba(255,255,255,0.45);
+  --logo:'Anton',sans-serif; --noto:'Noto Sans JP',sans-serif; --inter:'Inter',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.92);backdrop-filter:blur(12px);}
-.nav-logo{font-family:var(--logo);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
-.nav-logo span{display:block;font-family:var(--noto);font-size:8px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-top:2px;}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;transition:color 0.2s;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
+.nav-logo{display:flex;flex-direction:column;line-height:1;}
+.nav-logo-main{font-family:var(--logo);font-size:22px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--inter);font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-lang{display:flex;gap:12px;}
-.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
-.nav-lang span.active{color:var(--green);}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
-
-.ph{padding:96px 48px 28px;border-bottom:0.5px solid var(--line-soft);display:flex;justify-content:space-between;align-items:flex-end;}
-.ph-title{font-family:var(--logo);font-size:48px;letter-spacing:0.06em;color:#fff;line-height:1;}
-.ph-title small{display:block;font-family:var(--noto);font-size:10px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-bottom:6px;}
-.ph-note{font-size:10px;line-height:1.9;color:rgba(255,255,255,0.28);font-weight:300;text-align:right;max-width:320px;}
-
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:0.5px solid var(--line-soft);}
-.price-card{padding:40px 32px;border-right:0.5px solid var(--line-soft);transition:background 0.2s;}
-.price-card:last-child{border-right:none;}
-.price-card:hover{background:rgba(255,255,255,0.02);}
-
-.size-visual{margin-bottom:28px;display:flex;align-items:flex-end;gap:8px;height:68px;}
-.size-box{background:rgba(127,255,106,0.1);border:0.5px solid var(--green-border);}
-.size-ref{width:44px;height:44px;background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;}
-.size-ref-label{font-family:var(--inter);font-size:7px;color:rgba(255,255,255,0.2);}
-
-.price-num{font-family:var(--inter);font-size:9px;letter-spacing:0.15em;color:var(--text-faint);margin-bottom:10px;}
-.price-name-jp{font-size:13px;font-weight:500;color:var(--white);letter-spacing:0.08em;margin-bottom:2px;}
-.price-name-en{font-family:var(--logo);font-size:11px;letter-spacing:0.14em;color:var(--text-dim);margin-bottom:18px;}
-.price-amount{font-family:var(--logo);font-size:38px;color:var(--green);letter-spacing:0.02em;line-height:1;}
-.price-amount span{font-family:var(--inter);font-size:14px;color:var(--green-dim);}
-.price-desc{font-size:9px;line-height:2;color:rgba(255,255,255,0.25);font-weight:300;margin-top:14px;}
-
-.btn-contact{display:block;margin-top:22px;font-family:var(--inter);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--green);padding:12px 0;text-align:center;}
-
-.note-section{padding:32px 48px;border-bottom:0.5px solid var(--line-soft);display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.note-item{padding:0 40px 0 0;border-right:0.5px solid var(--line-soft);}
-.note-item:last-child{border-right:none;padding:0 0 0 40px;}
-.note-label{font-family:var(--inter);font-size:9px;letter-spacing:0.18em;color:var(--green-dim);text-transform:uppercase;margin-bottom:10px;}
-.note-text{font-size:11px;line-height:2;color:rgba(255,255,255,0.32);font-weight:300;}
-
-.book-banner{padding:36px 48px;display:flex;justify-content:space-between;align-items:center;}
-.book-banner-title{font-size:18px;font-weight:500;color:#fff;}
-.book-banner-sub{font-size:10px;color:rgba(255,255,255,0.28);font-weight:300;margin-top:6px;line-height:1.8;}
-.book-banner-actions{display:flex;gap:12px;}
-.btn-primary{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--green);padding:13px 28px;display:inline-block;transition:opacity 0.2s;}
-.btn-primary:hover{opacity:0.85;}
-.btn-ghost{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);border:0.5px solid rgba(255,255,255,0.12);padding:12px 24px;display:inline-block;transition:color 0.2s;}
-.btn-ghost:hover{color:#fff;}
-
-.nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
+.nav-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--logo);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
-.nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
-.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
-.nav-mobile-lang span.active{color:var(--green);}
+.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a:hover{color:#fff;}
+
+/* PAGE */
+.page{padding:96px 48px 60px;}
+.page-title{font-family:var(--logo);font-size:48px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:6px;}
+.page-note{font-size:11px;color:var(--text-dim);font-weight:300;margin-bottom:48px;line-height:1.8;}
+
+/* PRICE LIST */
+.price-section{margin-bottom:48px;}
+.price-section-title{font-family:var(--logo);font-size:13px;letter-spacing:0.2em;color:var(--green);text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:0.5px solid rgba(127,255,106,0.2);}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.price-row:last-child{border-bottom:none;}
+.price-name{font-size:13px;color:var(--white);font-weight:300;}
+.price-name-ja{font-size:10px;color:var(--text-dim);margin-left:8px;}
+.price-val{font-family:var(--logo);font-size:18px;color:var(--white);letter-spacing:0.04em;white-space:nowrap;}
+
+/* BOOK BANNER */
+.book-banner{border-top:0.5px solid var(--line);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.book-banner-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:6px;}
+.book-banner-sub{font-size:11px;color:var(--text-muted);font-weight:300;line-height:1.8;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;display:inline-block;transition:opacity 0.2s;font-weight:500;white-space:nowrap;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;white-space:nowrap;}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
+.banner-btns{display:flex;gap:12px;flex-shrink:0;}
 
 @media(max-width:768px){
-  .nav{padding:0 20px;height:56px;}
-  .nav-links,.nav-lang{display:none;}
+  .nav{padding:0 20px;height:60px;}
+  .nav-links{display:none;}
   .nav-hamburger{display:flex;}
-  .ph{padding:76px 20px 20px;flex-direction:column;gap:12px;}
-  .ph-note{text-align:left;}
-  .price-grid{grid-template-columns:1fr 1fr;}
-  .price-card{padding:24px 20px;border-bottom:0.5px solid var(--line-soft);}
-  .price-card:nth-child(2n){border-right:none;}
-  .size-visual{height:48px;margin-bottom:16px;}
-  .price-amount{font-size:28px;}
-  .note-section{grid-template-columns:1fr;padding:24px 20px;}
-  .note-item{border-right:none;padding:0 0 20px;border-bottom:0.5px solid var(--line-soft);}
-  .note-item:last-child{border-bottom:none;padding:20px 0 0;}
-  .book-banner{flex-direction:column;gap:20px;padding:24px 20px;align-items:flex-start;}
-  .book-banner-actions{flex-direction:column;width:100%;}
-  .btn-primary,.btn-ghost{text-align:center;width:100%;}
+  .nav-mobile-menu{top:60px;}
+  .page{padding:78px 20px 40px;}
+  .page-title{font-size:36px;}
+  .book-banner{flex-direction:column;align-items:flex-start;padding:24px 20px;}
+  .banner-btns{flex-direction:column;width:100%;}
+  .btn-primary,.btn-outline{text-align:center;width:100%;}
 }
 @media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-main">SABOTEN</div>
@@ -108,89 +80,70 @@ a{text-decoration:none;color:inherit;}
     <li><a href="price.html" class="active">Price</a></li>
     <li><a href="nail.html">Nail</a></li>
     <li><a href="works.html">Works</a></li>
-    <li><a href="https://nikerata.com" target="_blank">Shop Nikerata</a></li>
+    <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
   </ul>
-  <div class="nav-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
-  <a href="tattoo.html">Tattoo</a><a href="price.html">Price</a><a href="nail.html">Nail</a>
-  <a href="works.html">Works</a><a href="https://nikerata.com" target="_blank">Shop</a><a href="access.html">Access</a>
-  <div class="nav-mobile-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
+  <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
+  <a href="price.html" onclick="toggleMenu()">Price</a>
+  <a href="nail.html" onclick="toggleMenu()">Nail</a>
+  <a href="works.html" onclick="toggleMenu()">Works</a>
+  <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
+  <a href="access.html" onclick="toggleMenu()">Access</a>
 </div>
 
-<div class="ph">
-  <div class="ph-title"><small>料金案内</small>PRICE</div>
-  <p class="ph-note">料金はアーティストにより異なります。詳細は各アーティストへ。<br><span style="color:rgba(255,255,255,0.16);font-size:9px;">Price varies depending on the artist.</span></p>
-</div>
+<div class="page">
+  <div class="page-title">Price</div>
+  <p class="page-note">
+    料金はアーティストにより異なります。詳細は各アーティストへお問い合わせください。<br>
+    Price varies depending on the artist. Please contact each artist for details.
+  </p>
 
-<div class="price-grid">
-  <div class="price-card">
-    <div class="size-visual">
-      <div class="size-box" style="width:22px;height:22px;"></div>
-      <div class="size-ref"><span class="size-ref-label">500¥</span></div>
+  <div class="price-section">
+    <div class="price-section-title">Tattoo Price Guide</div>
+    <div class="price-row">
+      <span class="price-name">コインサイズ <span class="price-name-ja">Coin Size</span></span>
+      <span class="price-val">¥5,000〜</span>
     </div>
-    <div class="price-num">01</div>
-    <div class="price-name-jp">コインサイズ</div>
-    <div class="price-name-en">Coin Size</div>
-    <div class="price-amount">¥5,000<span>〜</span></div>
-    <p class="price-desc">500円玉程度のサイズ。<br>ワンポイントに最適。<br>Approx. 500 yen coin size.</p>
-  </div>
-  <div class="price-card">
-    <div class="size-visual">
-      <div class="size-box" style="width:32px;height:50px;"></div>
-      <div class="size-ref"><span class="size-ref-label">500¥</span></div>
+    <div class="price-row">
+      <span class="price-name">タバコサイズ <span class="price-name-ja">Cigarette Box Size</span></span>
+      <span class="price-val">¥15,000〜</span>
     </div>
-    <div class="price-num">02</div>
-    <div class="price-name-jp">タバコサイズ</div>
-    <div class="price-name-en">Cigarette Box Size</div>
-    <div class="price-amount">¥15,000<span>〜</span></div>
-    <p class="price-desc">タバコの箱程度のサイズ。<br>Approx. cigarette box size.</p>
-  </div>
-  <div class="price-card">
-    <div class="size-visual">
-      <div class="size-box" style="width:50px;height:56px;"></div>
-      <div class="size-ref"><span class="size-ref-label">500¥</span></div>
+    <div class="price-row">
+      <span class="price-name">ハガキサイズ <span class="price-name-ja">Postcard Size</span></span>
+      <span class="price-val">¥23,000〜</span>
     </div>
-    <div class="price-num">03</div>
-    <div class="price-name-jp">ハガキサイズ</div>
-    <div class="price-name-en">Postcard Size</div>
-    <div class="price-amount">¥23,000<span>〜</span></div>
-    <p class="price-desc">ハガキ程度のサイズ。<br>複雑なデザインにも対応。<br>Approx. postcard size.</p>
-  </div>
-  <div class="price-card">
-    <div class="size-visual">
-      <div class="size-box" style="width:45px;height:64px;"></div>
-      <div class="size-ref"><span class="size-ref-label">500¥</span></div>
+    <div class="price-row">
+      <span class="price-name">A4サイズ以上 <span class="price-name-ja">A4 Size & Above</span></span>
+      <span class="price-val">お問い合わせ</span>
     </div>
-    <div class="price-num">04</div>
-    <div class="price-name-jp">A4サイズ以上</div>
-    <div class="price-name-en">A4 Size & Above</div>
-    <div class="price-amount" style="font-size:18px;color:rgba(255,255,255,0.35);">お問い合わせ<br><span style="font-size:10px;font-family:'Inter',sans-serif;">Please contact us</span></div>
-    <a class="btn-contact" href="access.html">お問い合わせ / Contact</a>
   </div>
-</div>
 
-<div class="note-section">
-  <div class="note-item">
-    <div class="note-label">ご予約について</div>
-    <div class="note-text">ご予約は各アーティストのInstagramよりお願いしております。Instagramをお持ちでない方はお電話にてご連絡ください。<br><span style="color:rgba(255,255,255,0.18);font-size:10px;">Reservations via each artist's Instagram. No Instagram? Please call us.</span></div>
-  </div>
-  <div class="note-item">
-    <div class="note-label">料金について</div>
-    <div class="note-text">掲載の料金はあくまで目安です。デザインの複雑さや施術時間によって変動します。詳細はアーティストへ。<br><span style="color:rgba(255,255,255,0.18);font-size:10px;">Listed prices are estimates. Final cost varies by design and session time.</span></div>
+  <div class="price-section">
+    <div class="price-section-title">Notes</div>
+    <div class="price-row">
+      <span class="price-name">ご予約</span>
+      <span class="price-name-ja" style="font-size:11px;color:var(--text-muted);">各アーティストのInstagramよりお願いしております</span>
+    </div>
+    <div class="price-row">
+      <span class="price-name">料金について</span>
+      <span class="price-name-ja" style="font-size:11px;color:var(--text-muted);">デザインの複雑さ・施術時間により変動します</span>
+    </div>
   </div>
 </div>
 
 <div class="book-banner">
   <div>
-    <div class="book-banner-title">アーティストを選んで、予約へ</div>
-    <div class="book-banner-sub">各アーティストのポートフォリオを確認してからご予約いただけます。<br>Find your artist and book directly via Instagram.</div>
+    <div class="book-banner-title">アーティストを選んで予約へ</div>
+    <div class="book-banner-sub">各アーティストのInstagramから直接ご予約いただけます。<br>Find your artist and book via Instagram.</div>
   </div>
-  <div class="book-banner-actions">
+  <div class="banner-btns">
     <a class="btn-primary" href="tattoo.html">アーティストを見る</a>
-    <a class="btn-ghost" href="access.html">お問い合わせ</a>
+    <a class="btn-outline" href="access.html">お問い合わせ</a>
   </div>
 </div>
 

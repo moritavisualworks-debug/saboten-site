@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Works — SABOTEN WORKS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--logo:'Barlow Condensed',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--logo:'Anton',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
@@ -22,7 +22,7 @@ a{text-decoration:none;color:inherit;}
 .nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
 .nav-lang span.active{color:var(--green);}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.65);}
 
 /* HERO */
 .works-hero{display:grid;grid-template-columns:1fr 1fr;padding-top:64px;border-bottom:0.5px solid var(--line-soft);}
@@ -70,7 +70,7 @@ a{text-decoration:none;color:inherit;}
 
 .nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--logo);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.nav-mobile-menu a{font-family:var(--logo);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.48);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
 .nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
 .nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
 .nav-mobile-lang span.active{color:var(--green);}
@@ -105,13 +105,13 @@ a{text-decoration:none;color:inherit;}
     <li><a href="nail.html">Nail</a></li><li><a href="works.html" class="active">Works</a></li>
     <li><a href="https://nikerata.com" target="_blank">Shop Nikerata</a></li><li><a href="access.html">Access</a></li>
   </ul>
-  <div class="nav-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
+  
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="tattoo.html">Tattoo</a><a href="price.html">Price</a><a href="nail.html">Nail</a>
   <a href="works.html">Works</a><a href="https://nikerata.com" target="_blank">Shop</a><a href="access.html">Access</a>
-  <div class="nav-mobile-lang"><span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span></div>
+  
 </div>
 
 <div class="works-hero">

@@ -7,148 +7,105 @@
 <meta name="description" content="東京・赤坂のタトゥースタジオ。多国籍のアーティスト20名以上が在籍するクリエイティブクルー。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black: #0c0c0c;
-  --white: #f0f0f0;
-  --green: #7fff6a;
-  --green-dim: rgba(127,255,106,0.7);
-  --green-border: rgba(127,255,106,0.3);
-  --line: rgba(255,255,255,0.08);
-  --line-soft: rgba(255,255,255,0.06);
-  --text-muted: rgba(255,255,255,0.6);
-  --text-dim: rgba(255,255,255,0.4);
-  --logo: 'Barlow Condensed', sans-serif;
-  --noto: 'Noto Sans JP', sans-serif;
-  --inter: 'Inter', sans-serif;
+  --black:#0c0c0c; --white:#f0f0f0; --green:#7fff6a;
+  --line:rgba(255,255,255,0.08); --line-soft:rgba(255,255,255,0.06);
+  --text-muted:rgba(255,255,255,0.65); --text-dim:rgba(255,255,255,0.45);
+  --logo:'Anton',sans-serif; --noto:'Noto Sans JP',sans-serif; --inter:'Inter',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 
-/* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:68px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
-
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
 .nav-logo{display:flex;flex-direction:column;line-height:1;}
-.nav-logo-main{font-family:var(--logo);font-weight:900;font-size:26px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
-.nav-logo-sub{font-family:var(--logo);font-weight:700;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:1px;}
-
-.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-logo-main{font-family:var(--logo);font-size:22px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--inter);font-weight:400;font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-lang{display:flex;gap:10px;}
-.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.3);cursor:pointer;transition:color 0.2s;}
-.nav-lang span.active{color:var(--green);}
-
-/* ===== HERO ===== */
-.hero{min-height:100vh;padding-top:68px;display:flex;flex-direction:column;}
-.hero-main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px - 240px);}
-.hero-left{padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid var(--line-soft);}
-
-.hero-headline{font-family:var(--logo);font-weight:900;font-size:80px;line-height:0.92;letter-spacing:0.03em;color:#fff;text-transform:uppercase;}
-.hero-headline em{font-style:normal;color:var(--green);}
-
-.hero-desc{font-size:12px;line-height:2;color:rgba(255,255,255,0.55);font-weight:300;max-width:360px;margin-top:24px;}
-
-.hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
-.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:15px 36px;display:inline-block;transition:opacity 0.2s;font-weight:500;}
-.btn-primary:hover{opacity:0.85;}
-.btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;}
-.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
-
-.hero-right{background:#111;position:relative;overflow:hidden;}
-.hero-right iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none;}
-.hero-yt-label{position:absolute;bottom:14px;left:16px;font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:rgba(255,255,255,0.3);text-transform:uppercase;z-index:2;}
-
-/* ===== YOUTUBE SECTION ===== */
-.yt-section{border-top:0.5px solid var(--line-soft);padding:48px;}
-.yt-section-label{font-family:var(--inter);font-size:9px;letter-spacing:0.22em;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;}
-.yt-embed{position:relative;width:100%;padding-bottom:56.25%;background:#111;overflow:hidden;}
-.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
-
-/* ===== SERVICES ===== */
-.services{border-top:0.5px solid var(--line);}
-.services-grid{display:grid;grid-template-columns:repeat(5,1fr);}
-.svc{padding:24px 28px;border-right:0.5px solid var(--line-soft);display:block;text-decoration:none;color:inherit;transition:background 0.25s;}
-.svc:last-child{border-right:none;}
-.svc:hover{background:rgba(255,255,255,0.03);}
-.svc-name{font-family:var(--logo);font-weight:800;font-size:20px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;margin-bottom:8px;line-height:1;}
-.svc-desc{font-size:10px;line-height:1.7;color:rgba(255,255,255,0.45);font-weight:300;}
-.svc-btn{display:inline-block;margin-top:14px;font-family:var(--inter);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:8px 16px;transition:opacity 0.2s;}
-.svc:hover .svc-btn{opacity:0.85;}
-
-/* ===== NIKERATA ===== */
-.nikerata{border-top:0.5px solid var(--line);display:grid;grid-template-columns:1fr 1fr;}
-.nikerata-left{padding:32px 48px;border-right:0.5px solid var(--line-soft);display:flex;align-items:center;gap:32px;}
-.nikerata-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
-.nikerata-name{font-family:var(--logo);font-weight:900;font-size:36px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
-.nikerata-right{padding:32px 48px;display:flex;align-items:center;}
-.nikerata-desc{font-size:11px;line-height:1.9;color:rgba(255,255,255,0.45);font-weight:300;}
-
-/* ===== REALESTATE ===== */
-.realestate{border-top:0.5px solid var(--line);display:grid;grid-template-columns:1fr 1fr;}
-.realestate-left{padding:32px 48px;border-right:0.5px solid var(--line-soft);display:flex;align-items:center;gap:32px;}
-.realestate-name{font-family:var(--logo);font-weight:900;font-size:36px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
-.realestate-right{padding:32px 48px;display:flex;align-items:center;}
-.realestate-desc{font-size:11px;line-height:1.9;color:rgba(255,255,255,0.45);font-weight:300;}
-
-/* ===== FOOTER ===== */
-.footer{border-top:0.5px solid var(--line-soft);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;}
-.footer-addr{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.28);}
-.footer-sns{display:flex;gap:20px;}
-.footer-sns a{font-family:var(--inter);font-size:9px;letter-spacing:0.14em;color:rgba(255,255,255,0.28);text-transform:uppercase;transition:color 0.2s;}
-.footer-sns a:hover{color:#fff;}
-
-/* ===== MOBILE NAV ===== */
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
-.nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
+.nav-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--logo);font-weight:800;font-size:32px;letter-spacing:0.08em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
 .nav-mobile-menu a:hover{color:#fff;}
-.nav-mobile-lang{display:flex;gap:16px;margin-top:20px;}
-.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
-.nav-mobile-lang span.active{color:var(--green);}
 
-/* ===== RESPONSIVE ===== */
+/* HERO */
+.hero{padding-top:64px;display:flex;flex-direction:column;}
+.hero-main{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 64px);}
+.hero-left{padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid var(--line-soft);}
+.hero-headline{font-family:var(--logo);font-size:76px;line-height:0.95;letter-spacing:0.03em;color:#fff;text-transform:uppercase;}
+.hero-headline em{font-style:normal;color:var(--green);}
+.hero-desc{font-size:12px;line-height:2;color:var(--text-muted);font-weight:300;max-width:360px;margin-top:24px;}
+.hero-cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;display:inline-block;transition:opacity 0.2s;font-weight:500;white-space:nowrap;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;white-space:nowrap;}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
+.hero-right{background:#111;position:relative;overflow:hidden;}
+.hero-right iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none;}
+
+/* SERVICES */
+.services{border-top:0.5px solid var(--line);}
+.services-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+.svc{padding:24px 24px 28px;border-right:0.5px solid var(--line-soft);display:block;text-decoration:none;color:inherit;transition:background 0.25s;}
+.svc:last-child{border-right:none;}
+.svc:hover{background:rgba(255,255,255,0.03);}
+.svc-name{font-family:var(--logo);font-size:18px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:10px;line-height:1;}
+.svc-desc{font-size:10px;line-height:1.8;color:rgba(255,255,255,0.5);font-weight:300;}
+.svc-btn{display:inline-block;margin-top:16px;font-family:var(--inter);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:9px 18px;}
+
+/* NIKERATA */
+.nikerata{border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:28px 48px;}
+.nikerata-left{display:flex;align-items:center;gap:28px;}
+.nikerata-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
+.nikerata-name{font-family:var(--logo);font-size:32px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+
+/* REALESTATE */
+.realestate{border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:28px 48px;}
+.realestate-left{display:flex;align-items:center;gap:28px;}
+.realestate-name{font-family:var(--logo);font-size:32px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.re-desc{font-size:11px;line-height:1.8;color:var(--text-muted);font-weight:300;max-width:480px;}
+
+/* FOOTER */
+.footer{border-top:0.5px solid var(--line-soft);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;}
+.footer-addr{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.35);}
+.footer-sns{display:flex;gap:20px;}
+.footer-sns a{font-family:var(--inter);font-size:9px;letter-spacing:0.14em;color:rgba(255,255,255,0.35);text-transform:uppercase;transition:color 0.2s;}
+.footer-sns a:hover{color:#fff;}
+
 @media(max-width:768px){
   .nav{padding:0 20px;height:60px;}
-  .nav-links,.nav-lang{display:none;}
+  .nav-links{display:none;}
   .nav-hamburger{display:flex;}
-  .nav-logo-main{font-size:22px;}
+  .nav-logo-main{font-size:20px;}
   .nav-mobile-menu{top:60px;}
-
   .hero-main{grid-template-columns:1fr;min-height:auto;}
   .hero-left{padding:32px 20px 28px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
-  .hero-headline{font-size:56px;}
-  .hero-right{height:240px;}
-
-  .yt-section{padding:28px 20px;}
-
+  .hero-headline{font-size:52px;}
+  .hero-right{height:220px;}
+  .hero-cta{gap:10px;}
+  .btn-primary,.btn-outline{padding:13px 22px;font-size:10px;width:100%;text-align:center;}
   .services-grid{grid-template-columns:1fr 1fr;}
-  .svc{border-bottom:0.5px solid var(--line-soft);padding:20px;}
+  .svc{border-bottom:0.5px solid var(--line-soft);padding:18px;}
   .svc:nth-child(2n){border-right:none;}
   .svc:nth-child(5){grid-column:span 2;}
-
-  .nikerata,.realestate{grid-template-columns:1fr;}
-  .nikerata-left,.realestate-left{border-right:none;border-bottom:0.5px solid var(--line-soft);padding:24px 20px;}
-  .nikerata-right,.realestate-right{padding:20px;}
-
+  .nikerata,.realestate{flex-direction:column;gap:16px;align-items:flex-start;padding:24px 20px;}
+  .nikerata .btn-primary,.realestate .btn-primary{width:100%;text-align:center;}
+  .re-desc{max-width:100%;}
   .footer{flex-direction:column;gap:10px;padding:16px 20px;text-align:center;}
 }
-@media(min-width:769px){
-  .nav-hamburger{display:none;}
-  .nav-mobile-menu{display:none!important;}
-}
-
+@media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
 .fade-in{opacity:0;transform:translateY(14px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-main">SABOTEN</div>
@@ -163,14 +120,8 @@ a{text-decoration:none;color:inherit;}
     <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
   </ul>
-  <div class="nav-lang">
-    <span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span>
-  </div>
-  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
-
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
   <a href="price.html" onclick="toggleMenu()">Price</a>
@@ -179,22 +130,14 @@ a{text-decoration:none;color:inherit;}
   <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
   <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
   <a href="access.html" onclick="toggleMenu()">Access</a>
-  <div class="nav-mobile-lang">
-    <span class="active">JP</span><span>EN</span><span>ES</span><span>KO</span>
-  </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-main">
     <div class="hero-left">
       <div>
         <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
-        <p class="hero-desc fade-in" style="transition-delay:0.1s;">
-          東京・赤坂に構える、東京都最大級のタトゥースタジオ。<br>
-          多国籍のアーティスト20名以上が在籍し、<br>
-          バラエティに富んだスタイルに対応しています。
-        </p>
+        <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
       </div>
       <div class="hero-cta fade-in" style="transition-delay:0.15s;">
         <a class="btn-primary" href="tattoo.html">予約・お問い合わせ</a>
@@ -202,11 +145,9 @@ a{text-decoration:none;color:inherit;}
       </div>
     </div>
     <div class="hero-right">
-      <span class="hero-yt-label">Latest — YouTube</span>
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=sabotentattooparlor&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
-
-  <!-- SERVICES -->
   <div class="services">
     <div class="services-grid">
       <a class="svc" href="tattoo.html">
@@ -226,31 +167,18 @@ a{text-decoration:none;color:inherit;}
       </a>
       <a class="svc" href="https://www.instagram.com/soki_kambara" target="_blank">
         <div class="svc-name">HAIR</div>
-        <div class="svc-desc">ヘアサロン。スタイリスト @soki_kambara。Instagram より予約受付中。</div>
+        <div class="svc-desc">ヘアスタイリスト @soki_kambara。Instagramより予約受付中。</div>
         <span class="svc-btn">Book</span>
       </a>
       <a class="svc" href="https://www.instagram.com/saboten.realestate" target="_blank">
         <div class="svc-name">REAL ESTATE</div>
-        <div class="svc-desc">不動産サービス。タトゥーアーティスト・クリエイターのための物件探しをサポート。</div>
+        <div class="svc-desc">タトゥーアーティスト・クリエイターのための不動産サービス。</div>
         <span class="svc-btn">View</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- YOUTUBE -->
-<div class="yt-section">
-  <div class="yt-section-label">Latest — YouTube</div>
-  <div class="yt-embed">
-    <iframe
-      src="https://www.youtube.com/embed/videoseries?list=UUsabotentattooparlor&autoplay=0&controls=1&modestbranding=1&rel=0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-<!-- NIKERATA -->
 <div class="nikerata">
   <div class="nikerata-left">
     <div>
@@ -259,23 +187,18 @@ a{text-decoration:none;color:inherit;}
     </div>
     <a class="btn-primary" href="https://nikerata.com" target="_blank">Shop</a>
   </div>
-  <div class="nikerata-right">
-    <div class="nikerata-desc">セレクトショップ Nikerata。<br>スタジオ併設・オンラインストア。<br><span style="color:rgba(255,255,255,0.28);font-size:10px;">nikerata.com</span></div>
-  </div>
+  <div class="re-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">nikerata.com</span></div>
 </div>
 
-<!-- REAL ESTATE -->
 <div class="realestate">
   <div class="realestate-left">
     <div>
       <div class="nikerata-label">Real Estate</div>
-      <div class="realestate-name">SABOTEN<br>REAL ESTATE</div>
+      <div class="realestate-name">SABOTEN REAL ESTATE</div>
     </div>
     <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
   </div>
-  <div class="realestate-right">
-    <div class="realestate-desc">タトゥーアーティスト・ファッションクリエイターのための不動産サービス。<br>一般的な審査が難しい方もお気軽にご相談ください。<br><span style="color:rgba(255,255,255,0.28);font-size:10px;">@saboten.realestate</span></div>
-  </div>
+  <div class="re-desc">タトゥーアーティスト・ファッションクリエイターのための不動産サービス。一般的な審査が難しい方もお気軽にご相談ください。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">@saboten.realestate</span></div>
 </div>
 
 <footer class="footer">
@@ -289,7 +212,7 @@ a{text-decoration:none;color:inherit;}
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 const fadeEls=document.querySelectorAll('.fade-in');
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
 fadeEls.forEach(el=>observer.observe(el));
 setTimeout(()=>{fadeEls.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');});},100);
 </script>
