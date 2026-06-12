@@ -9,11 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --black:#0c0c0c; --white:#f0f0f0; --green:#7fff6a;
-  --line:rgba(255,255,255,0.08); --line-soft:rgba(255,255,255,0.06);
-  --text-muted:rgba(255,255,255,0.65); --text-dim:rgba(255,255,255,0.45);
-  --logo:'Anton',sans-serif; --noto:'Noto Sans JP',sans-serif; --inter:'Inter',sans-serif;
+:root{
+  --black:#0c0c0c;--white:#f0f0f0;--green:#7fff6a;
+  --line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);
+  --text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);
+  --logo:'Anton',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -24,15 +24,15 @@ a{text-decoration:none;color:inherit;}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
 .nav-logo{display:flex;flex-direction:column;line-height:1;}
 .nav-logo-main{font-family:var(--logo);font-size:22px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
-.nav-logo-sub{font-family:var(--inter);font-weight:400;font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
+.nav-logo-sub{font-family:var(--inter);font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
 .nav-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;display:block;}
 .nav-mobile-menu a:hover{color:#fff;}
 
 /* HERO */
@@ -43,7 +43,7 @@ a{text-decoration:none;color:inherit;}
 .hero-headline em{font-style:normal;color:var(--green);}
 .hero-desc{font-size:12px;line-height:2;color:var(--text-muted);font-weight:300;max-width:360px;margin-top:24px;}
 .hero-cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;}
-.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;display:inline-block;transition:opacity 0.2s;font-weight:500;white-space:nowrap;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;display:inline-block;transition:opacity 0.2s;font-weight:500;white-space:nowrap;border:none;cursor:pointer;}
 .btn-primary:hover{opacity:0.85;}
 .btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;white-space:nowrap;}
 .btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
@@ -53,24 +53,33 @@ a{text-decoration:none;color:inherit;}
 /* SERVICES */
 .services{border-top:0.5px solid var(--line);}
 .services-grid{display:grid;grid-template-columns:repeat(5,1fr);}
-.svc{padding:24px 24px 28px;border-right:0.5px solid var(--line-soft);display:block;text-decoration:none;color:inherit;transition:background 0.25s;}
+.svc{border-right:0.5px solid var(--line-soft);display:block;text-decoration:none;color:inherit;transition:background 0.25s;overflow:hidden;}
 .svc:last-child{border-right:none;}
 .svc:hover{background:rgba(255,255,255,0.03);}
-.svc-name{font-family:var(--logo);font-size:18px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:10px;line-height:1;}
+/* 写真エリア */
+.svc-img{width:100%;aspect-ratio:4/3;background:#161616;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.svc-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.svc-img-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.15);text-transform:uppercase;}
+.svc-body{padding:20px 22px 24px;}
+.svc-name{font-family:var(--logo);font-size:18px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:8px;line-height:1;}
 .svc-desc{font-size:10px;line-height:1.8;color:rgba(255,255,255,0.5);font-weight:300;}
-.svc-btn{display:inline-block;margin-top:16px;font-family:var(--inter);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:9px 18px;}
+.svc-btn{display:inline-block;margin-top:14px;font-family:var(--inter);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:9px 18px;}
 
 /* NIKERATA */
-.nikerata{border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:28px 48px;}
-.nikerata-left{display:flex;align-items:center;gap:28px;}
+.nikerata{border-top:0.5px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:28px 48px;}
+.nikerata-img{width:120px;height:80px;background:#161616;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nikerata-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .nikerata-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
-.nikerata-name{font-family:var(--logo);font-size:32px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nikerata-name{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nikerata-desc{font-size:11px;line-height:1.8;color:var(--text-muted);font-weight:300;}
 
-/* REALESTATE */
-.realestate{border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:28px 48px;}
-.realestate-left{display:flex;align-items:center;gap:28px;}
-.realestate-name{font-family:var(--logo);font-size:32px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
-.re-desc{font-size:11px;line-height:1.8;color:var(--text-muted);font-weight:300;max-width:480px;}
+/* REAL ESTATE */
+.realestate{border-top:0.5px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:28px 48px;}
+.re-img{width:120px;height:80px;background:#161616;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.re-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.re-name{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.re-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
+.re-desc{font-size:11px;line-height:1.8;color:var(--text-muted);font-weight:300;}
 
 /* FOOTER */
 .footer{border-top:0.5px solid var(--line-soft);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -90,14 +99,13 @@ a{text-decoration:none;color:inherit;}
   .hero-headline{font-size:52px;}
   .hero-right{height:220px;}
   .hero-cta{gap:10px;}
-  .btn-primary,.btn-outline{padding:13px 22px;font-size:10px;width:100%;text-align:center;}
+  .btn-primary,.btn-outline{padding:13px 20px;font-size:10px;width:100%;text-align:center;display:block;}
   .services-grid{grid-template-columns:1fr 1fr;}
-  .svc{border-bottom:0.5px solid var(--line-soft);padding:18px;}
+  .svc{border-bottom:0.5px solid var(--line-soft);}
   .svc:nth-child(2n){border-right:none;}
   .svc:nth-child(5){grid-column:span 2;}
-  .nikerata,.realestate{flex-direction:column;gap:16px;align-items:flex-start;padding:24px 20px;}
-  .nikerata .btn-primary,.realestate .btn-primary{width:100%;text-align:center;}
-  .re-desc{max-width:100%;}
+  .nikerata,.realestate{grid-template-columns:1fr;gap:16px;padding:20px;}
+  .nikerata-img,.re-img{width:100%;height:140px;}
   .footer{flex-direction:column;gap:10px;padding:16px 20px;text-align:center;}
 }
 @media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
@@ -115,7 +123,7 @@ a{text-decoration:none;color:inherit;}
     <li><a href="tattoo.html">Tattoo</a></li>
     <li><a href="price.html">Price</a></li>
     <li><a href="nail.html">Nail</a></li>
-    <li><a href="works.html">Works</a></li>
+    <li><a href="works.html">Creative</a></li>
     <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
     <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
@@ -126,7 +134,7 @@ a{text-decoration:none;color:inherit;}
   <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
   <a href="price.html" onclick="toggleMenu()">Price</a>
   <a href="nail.html" onclick="toggleMenu()">Nail</a>
-  <a href="works.html" onclick="toggleMenu()">Works</a>
+  <a href="works.html" onclick="toggleMenu()">Creative</a>
   <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
   <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
   <a href="access.html" onclick="toggleMenu()">Access</a>
@@ -148,61 +156,85 @@ a{text-decoration:none;color:inherit;}
       <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=sabotentattooparlor&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
+
   <div class="services">
     <div class="services-grid">
+      <!-- TATTOO
+           写真追加: svc-imgの中に <img src="images/tattoo.jpg" alt="Tattoo"> を入れる -->
       <a class="svc" href="tattoo.html">
-        <div class="svc-name">TATTOO</div>
-        <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
-        <span class="svc-btn">Book</span>
+        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-body">
+          <div class="svc-name">TATTOO</div>
+          <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
+          <span class="svc-btn">Book</span>
+        </div>
       </a>
+      <!-- NAIL -->
       <a class="svc" href="nail.html">
-        <div class="svc-name">NAIL</div>
-        <div class="svc-desc">SABOTEN NAIL PARLOR。スタジオ併設のネイルサロン。完全予約制。</div>
-        <span class="svc-btn">Book</span>
+        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-body">
+          <div class="svc-name">NAIL</div>
+          <div class="svc-desc">SABOTEN NAIL PARLOR。スタジオ併設のネイルサロン。完全予約制。</div>
+          <span class="svc-btn">Book</span>
+        </div>
       </a>
+      <!-- CREATIVE -->
       <a class="svc" href="works.html">
-        <div class="svc-name">CREATIVE</div>
-        <div class="svc-desc">SABOTEN WORKS。映像・写真・ブランディング・クリエイティブ全般。</div>
-        <span class="svc-btn">View</span>
+        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-body">
+          <div class="svc-name">CREATIVE</div>
+          <div class="svc-desc">SABOTEN WORKS。映像・写真・ブランディング・クリエイティブ全般。</div>
+          <span class="svc-btn">View</span>
+        </div>
       </a>
+      <!-- HAIR -->
       <a class="svc" href="https://www.instagram.com/soki_kambara" target="_blank">
-        <div class="svc-name">HAIR</div>
-        <div class="svc-desc">ヘアスタイリスト @soki_kambara。Instagramより予約受付中。</div>
-        <span class="svc-btn">Book</span>
+        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-body">
+          <div class="svc-name">HAIR</div>
+          <div class="svc-desc">ヘアスタイリスト @soki_kambara。Instagramより予約受付中。</div>
+          <span class="svc-btn">Book</span>
+        </div>
       </a>
+      <!-- REAL ESTATE (services内は削除、下のバナーのみ) -->
       <a class="svc" href="https://www.instagram.com/saboten.realestate" target="_blank">
-        <div class="svc-name">REAL ESTATE</div>
-        <div class="svc-desc">タトゥーアーティスト・クリエイターのための不動産サービス。</div>
-        <span class="svc-btn">View</span>
+        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-body">
+          <div class="svc-name">REAL ESTATE</div>
+          <div class="svc-desc">クリエイター・アーティストのための不動産サービス。</div>
+          <span class="svc-btn">View</span>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
+<!-- NIKERATA BANNER -->
+<!-- 写真追加: nikerata-imgの中に <img src="images/nikerata.jpg" alt="Nikerata"> を入れる -->
 <div class="nikerata">
-  <div class="nikerata-left">
-    <div>
-      <div class="nikerata-label">Select Shop</div>
-      <div class="nikerata-name">NIKERATA</div>
-    </div>
-    <a class="btn-primary" href="https://nikerata.com" target="_blank">Shop</a>
+  <div class="nikerata-img"><span class="svc-img-hint">Photo</span></div>
+  <div>
+    <div class="nikerata-label">Select Shop</div>
+    <div class="nikerata-name">NIKERATA</div>
+    <div class="nikerata-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">nikerata.com</span></div>
   </div>
-  <div class="re-desc">セレクトショップ Nikerata。スタジオ併設・オンラインストア。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">nikerata.com</span></div>
+  <a class="btn-primary" href="https://nikerata.com" target="_blank">Shop</a>
 </div>
 
+<!-- REAL ESTATE BANNER -->
+<!-- 写真追加: re-imgの中に <img src="images/realestate.jpg" alt="Real Estate"> を入れる -->
 <div class="realestate">
-  <div class="realestate-left">
-    <div>
-      <div class="nikerata-label">Real Estate</div>
-      <div class="realestate-name">SABOTEN REAL ESTATE</div>
-    </div>
-    <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
+  <div class="re-img"><span class="svc-img-hint">Photo</span></div>
+  <div>
+    <div class="re-label">Real Estate</div>
+    <div class="re-name">REAL ESTATE</div>
+    <div class="re-desc">クリエイター・アーティストのための不動産サービス。<br>物件探し・審査のご相談はお気軽に。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">@saboten.realestate</span></div>
   </div>
-  <div class="re-desc">タトゥーアーティスト・ファッションクリエイターのための不動産サービス。一般的な審査が難しい方もお気軽にご相談ください。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">@saboten.realestate</span></div>
+  <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
 </div>
 
 <footer class="footer">
-  <span class="footer-addr">東京都港区赤坂6-15 赤坂ミツワビル別館3F &nbsp;·&nbsp; 03-6675-2578</span>
+  <span class="footer-addr">東京都港区赤坂6-15-1 赤坂ミツワビル別館（Bekkan）3F &nbsp;·&nbsp; 03-6675-2578</span>
   <div class="footer-sns">
     <a href="https://www.instagram.com/sabotentattooparlor/" target="_blank">Instagram</a>
     <a href="https://www.youtube.com/@sabotentattooparlor" target="_blank">YouTube</a>

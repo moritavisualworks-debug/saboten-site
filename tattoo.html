@@ -7,92 +7,99 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0c0c0c;--white:#f0f0f0;--green:#7fff6a;--green-dim:rgba(127,255,106,0.7);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.48);--logo:'Anton',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+:root{--black:#0c0c0c;--white:#f0f0f0;--green:#7fff6a;--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--logo:'Anton',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
-
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:68px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
 .nav-logo{display:flex;flex-direction:column;line-height:1;}
-.nav-logo-main{font-family:var(--logo);font-size:26px;letter-spacing:0.08em;color:#fff;text-transform:uppercase;}
-.nav-logo-sub{font-family:var(--logo);font-weight:700;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-top:1px;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
+.nav-logo-main{font-family:var(--logo);font-size:22px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--inter);font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-lang{display:flex;gap:10px;}
-.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
-.nav-lang span.active{color:var(--green);}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
-.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.65);}
-.nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+.nav-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
 .nav-mobile-menu.open{display:flex;}
-.nav-mobile-menu a{font-family:var(--logo);font-size:32px;letter-spacing:0.08em;color:rgba(255,255,255,0.5);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;display:block;}
 .nav-mobile-menu a:hover{color:#fff;}
-.nav-mobile-lang{display:flex;gap:16px;margin-top:20px;}
-.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
-.nav-mobile-lang span.active{color:var(--green);}
 
-.ph{padding:96px 48px 24px;border-bottom:0.5px solid var(--line-soft);}
-.ph-title{font-family:var(--logo);font-size:52px;letter-spacing:0.06em;color:#fff;line-height:1;text-transform:uppercase;}
+.ph{padding:88px 48px 24px;border-bottom:0.5px solid var(--line-soft);}
+.ph-title{font-family:var(--logo);font-size:48px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;}
 .ph-title small{display:block;font-family:var(--noto);font-size:10px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-bottom:6px;}
 
-.main{display:grid;grid-template-columns:220px 1fr;height:calc(100vh - 68px - 80px);}
+/* DESKTOP */
+.main{display:grid;grid-template-columns:220px 1fr;height:calc(100vh - 64px - 80px);}
 .idx{border-right:0.5px solid var(--line-soft);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.08) transparent;}
 .idx::-webkit-scrollbar{width:3px;}
 .idx::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);}
-.idx-item{padding:13px 24px;cursor:pointer;transition:background 0.15s;display:flex;align-items:center;border-left:2px solid transparent;}
+.idx-item{padding:12px 24px;cursor:pointer;transition:background 0.15s;display:flex;align-items:center;border-left:2px solid transparent;}
 .idx-item:hover{background:rgba(255,255,255,0.025);}
 .idx-item.on{border-left-color:var(--green);background:rgba(127,255,106,0.04);}
-.idx-name{font-family:var(--logo);font-size:18px;letter-spacing:0.06em;color:rgba(255,255,255,0.5);transition:color 0.15s;text-transform:uppercase;}
+.idx-name{font-family:var(--logo);font-size:16px;letter-spacing:0.04em;color:rgba(255,255,255,0.45);transition:color 0.15s;text-transform:uppercase;}
 .idx-item.on .idx-name{color:#fff;}
 
 .detail{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
-.detail-gallery{border-right:0.5px solid var(--line-soft);display:grid;grid-template-rows:1fr 100px;}
-.detail-main-img{background:#161616;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
-.detail-main-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-.img-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.2);text-transform:uppercase;}
-.detail-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.04);}
-.thumb{background:#1a1a1a;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;overflow:hidden;position:relative;}
-.thumb:hover{background:#222;}
-.thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+
+/* SLIDESHOW */
+.detail-slideshow{border-right:0.5px solid var(--line-soft);display:flex;flex-direction:column;overflow:hidden;}
+.slideshow-track-wrap{flex:1;position:relative;overflow:hidden;background:#161616;}
+.slideshow-track{display:flex;height:100%;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);}
+.slide-img{min-width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;background:#161616;}
+.slide-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.slide-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.15);text-transform:uppercase;}
+/* ★ 写真追加方法: ARTISTS配列の imgs に画像パスを3つ入れる
+   例: imgs:['images/kisa1.jpg','images/kisa2.jpg','images/kisa3.jpg'] */
+.slideshow-dots{display:flex;justify-content:center;gap:6px;padding:12px;background:var(--black);border-top:0.5px solid var(--line-soft);}
+.s-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.2s;}
+.s-dot.on{background:var(--green);width:14px;border-radius:2px;}
 
 .detail-info{padding:32px 28px;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto;}
-.di-name{font-family:var(--logo);font-size:56px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
-.di-ig{font-family:var(--inter);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.5);margin-top:10px;}
+.di-name{font-family:var(--logo);font-size:52px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
+.di-ig{font-family:var(--inter);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.45);margin-top:10px;}
 .di-divider{width:24px;height:0.5px;background:rgba(255,255,255,0.1);margin:20px 0;}
-.di-desc{font-size:11px;line-height:2;color:rgba(255,255,255,0.5);font-weight:300;}
+.di-desc{font-size:11px;line-height:2;color:rgba(255,255,255,0.55);font-weight:300;}
 .di-actions{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
-.btn-book{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 0;text-align:center;display:block;transition:opacity 0.2s;font-weight:500;}
-.btn-book:hover{opacity:0.85;}
-.btn-ig{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);border:0.5px solid rgba(255,255,255,0.15);padding:13px 0;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;transition:color 0.2s;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 0;text-align:center;display:block;transition:opacity 0.2s;font-weight:500;border:none;cursor:pointer;width:100%;}
+.btn-primary:hover{opacity:0.85;}
+.btn-ig{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);border:0.5px solid rgba(255,255,255,0.15);padding:13px 0;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;transition:color 0.2s;width:100%;}
 .btn-ig:hover{color:#fff;}
 
 /* MOBILE */
 .m-tabs{display:none;overflow-x:auto;border-bottom:0.5px solid var(--line-soft);scrollbar-width:none;}
 .m-tabs::-webkit-scrollbar{display:none;}
-.m-tab{flex-shrink:0;padding:14px 18px;font-family:var(--logo);font-size:15px;letter-spacing:0.08em;color:rgba(255,255,255,0.35);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;text-transform:uppercase;}
+.m-tab{flex-shrink:0;padding:12px 16px;font-family:var(--logo);font-size:14px;letter-spacing:0.04em;color:rgba(255,255,255,0.35);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;text-transform:uppercase;}
 .m-tab.on{color:#fff;border-bottom-color:var(--green);}
 .m-slide-wrap{display:none;overflow:hidden;}
 .m-slide-track{display:flex;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);}
 .m-slide{min-width:100vw;}
-.m-slide-img{width:100%;aspect-ratio:3/4;background:#161616;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.m-slide-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-.m-slide-counter{position:absolute;bottom:14px;right:14px;font-family:var(--inter);font-size:8px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);}
+
+/* Mobile slideshow inner */
+.m-artist-slideshow{position:relative;width:100%;aspect-ratio:1;background:#161616;overflow:hidden;}
+.m-artist-slides{display:flex;height:100%;transition:transform 0.4s ease;}
+.m-artist-slide{min-width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;}
+.m-artist-slide img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.m-artist-dots{display:flex;justify-content:center;gap:5px;padding:8px;background:rgba(12,12,12,0.8);position:absolute;bottom:0;left:0;right:0;}
+.m-a-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.2s;}
+.m-a-dot.on{background:#fff;width:12px;border-radius:2px;}
+
+.m-counter{position:absolute;bottom:40px;right:12px;font-family:var(--inter);font-size:8px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);}
 .m-slide-info{padding:20px 20px 28px;border-bottom:0.5px solid var(--line-soft);}
-.m-slide-name{font-family:var(--logo);font-size:44px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
-.m-slide-ig{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.5);margin-top:8px;}
-.m-slide-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+.m-slide-name{font-family:var(--logo);font-size:40px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
+.m-slide-ig{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.45);margin-top:8px;}
+.m-slide-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}
 .m-dots{display:none;justify-content:center;gap:6px;padding:14px 0;background:var(--black);}
 .dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all 0.2s;}
 .dot.on{background:var(--green);width:16px;border-radius:2px;}
 
 @media(max-width:768px){
   .nav{padding:0 20px;height:60px;}
-  .nav-links,.nav-lang{display:none;}
+  .nav-links{display:none;}
   .nav-hamburger{display:flex;}
   .nav-mobile-menu{top:60px;}
-  .ph{padding:78px 20px 18px;}
-  .ph-title{font-size:38px;}
+  .ph{padding:76px 20px 18px;}
+  .ph-title{font-size:36px;}
   .main{display:none;}
   .m-tabs{display:flex;}
   .m-slide-wrap{display:block;}
@@ -102,7 +109,6 @@ a{text-decoration:none;color:inherit;}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-main">SABOTEN</div>
@@ -112,23 +118,21 @@ a{text-decoration:none;color:inherit;}
     <li><a href="tattoo.html" class="active">Tattoo</a></li>
     <li><a href="price.html">Price</a></li>
     <li><a href="nail.html">Nail</a></li>
-    <li><a href="works.html">Works</a></li>
+    <li><a href="works.html">Creative</a></li>
     <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
     <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
     <li><a href="access.html">Access</a></li>
   </ul>
-  
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
   <a href="price.html" onclick="toggleMenu()">Price</a>
   <a href="nail.html" onclick="toggleMenu()">Nail</a>
-  <a href="works.html" onclick="toggleMenu()">Works</a>
+  <a href="works.html" onclick="toggleMenu()">Creative</a>
   <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
   <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
   <a href="access.html" onclick="toggleMenu()">Access</a>
-  
 </div>
 
 <div class="ph">
@@ -140,14 +144,18 @@ a{text-decoration:none;color:inherit;}
 <div class="main">
   <div class="idx"><div id="idxList"></div></div>
   <div class="detail">
-    <div class="detail-gallery">
-      <div class="detail-main-img" id="mainImg">
-        <span class="img-hint" id="mainImgLabel">Portfolio image</span>
+    <div class="detail-slideshow">
+      <div class="slideshow-track-wrap">
+        <div class="slideshow-track" id="dSlideTrack">
+          <div class="slide-img"><span class="slide-hint" id="slideHint">Portfolio</span></div>
+          <div class="slide-img"><span class="slide-hint">—</span></div>
+          <div class="slide-img"><span class="slide-hint">—</span></div>
+        </div>
       </div>
-      <div class="detail-thumbs">
-        <div class="thumb"><span class="img-hint">—</span></div>
-        <div class="thumb"><span class="img-hint">—</span></div>
-        <div class="thumb"><span class="img-hint">—</span></div>
+      <div class="slideshow-dots" id="dSlideDots">
+        <div class="s-dot on" onclick="dSlide(0)"></div>
+        <div class="s-dot" onclick="dSlide(1)"></div>
+        <div class="s-dot" onclick="dSlide(2)"></div>
       </div>
     </div>
     <div class="detail-info">
@@ -158,7 +166,7 @@ a{text-decoration:none;color:inherit;}
         <div class="di-desc" id="diDesc"></div>
       </div>
       <div class="di-actions">
-        <a class="btn-book" id="bookBtn" href="#" target="_blank">予約する / Book</a>
+        <a class="btn-primary" id="bookBtn" href="#" target="_blank">予約する / Book</a>
         <a class="btn-ig" id="igBtn" href="#" target="_blank">↗ Instagram</a>
       </div>
     </div>
@@ -169,40 +177,77 @@ a{text-decoration:none;color:inherit;}
 <div class="m-dots" id="slideDots"></div>
 
 <script>
+/* =====================================================
+   ★ アーティスト追加・削除はここだけ
+   imgs: 写真3枚のパス。例: ['images/kisa1.jpg','images/kisa2.jpg','images/kisa3.jpg']
+   写真がない場合は [] のまま
+===================================================== */
 const ARTISTS=[
-  {name:'KISA',ig:'@_tokyotattoo',igUrl:'https://instagram.com/_tokyotattoo',desc:'ブラックワーク・ファインラインを得意とする。繊細なラインと大胆な構図が特徴。',img:''},
-  {name:'SEA',ig:'@sea_hirayama',igUrl:'https://instagram.com/sea_hirayama',desc:'フローラル・ネイチャー系。自然モチーフを得意とする。',img:''},
-  {name:'ABYSS',ig:'@iwishyouwerehereforever',igUrl:'https://instagram.com/iwishyouwerehereforever',desc:'',img:''},
-  {name:'NEE.',ig:'@nee._tattoo',igUrl:'https://instagram.com/nee._tattoo',desc:'ミニマル・ジオメトリックスタイル。シンプルで洗練されたデザイン。',img:''},
-  {name:'YURIE',ig:'@yurie.0_o',igUrl:'https://instagram.com/yurie.0_o',desc:'ファインライン・レタリング。繊細なディテールを得意とする。',img:''},
-  {name:'TOI',ig:'@ppppp101qqqqq',igUrl:'https://instagram.com/ppppp101qqqqq',desc:'',img:''},
-  {name:'NEKONE KYOKO',ig:'@nekonekyoko',igUrl:'https://instagram.com/nekonekyoko',desc:'カラーワーク・ポップスタイル。鮮やかな発色が特徴。',img:''},
-  {name:'DANIEL',ig:'@danierutattoo',igUrl:'https://instagram.com/danierutattoo',desc:'',img:''},
-  {name:'JIJI',ig:'@marotaboi',igUrl:'https://instagram.com/marotaboi',desc:'',img:''},
-  {name:'SOKI',ig:'@soki_kambara',igUrl:'https://instagram.com/soki_kambara',desc:'',img:''},
-  {name:'ALISSA',ig:'@alysseterna1',igUrl:'https://instagram.com/alysseterna1',desc:'ヨーロッパ出身。装飾的・エレガントなスタイルが得意。',img:''},
-  {name:'TSUBAKI',ig:'@blrqttz',igUrl:'https://instagram.com/blrqttz',desc:'パターン・装飾的なデザインを専門とする。',img:''},
-  {name:'NAKAYAMA',ig:'@nrntru',igUrl:'https://instagram.com/nrntru',desc:'オリジナルデザインを中心に、幅広いスタイルに対応。',img:''},
-  {name:'SAKURA',ig:'@02sa_tattoo',igUrl:'https://instagram.com/02sa_tattoo',desc:'ウォーターカラー・フローラル。柔らかな色使いと繊細なデザインが得意。',img:''},
-  {name:'KAYA',ig:'@gigigigiggy',igUrl:'https://instagram.com/gigigigiggy',desc:'',img:''},
-  {name:'SEI',ig:'@lili_ijll',igUrl:'https://instagram.com/lili_ijll',desc:'',img:''},
-  {name:'RAI',ig:'@tokyoaddiction',igUrl:'https://instagram.com/tokyoaddiction',desc:'',img:''},
-  {name:'NAMI',ig:'@nami10g',igUrl:'https://instagram.com/nami10g',desc:'ポートレート・リアリズム。繊細な陰影表現が得意。',img:''},
-  {name:'ARMAINE',ig:'@lunarose.tatt',igUrl:'https://instagram.com/lunarose.tatt',desc:'',img:''},
-  {name:'KAI',ig:'@kaitattooer',igUrl:'https://instagram.com/kaitattooer',desc:'',img:''},
-  {name:'AKIRA',ig:'@whodisturbsthedead',igUrl:'https://instagram.com/whodisturbsthedead',desc:'',img:''},
+  {name:'KISA',ig:'@_tokyotattoo',igUrl:'https://instagram.com/_tokyotattoo',desc:'ブラックワーク・ファインラインを得意とする。繊細なラインと大胆な構図が特徴。',imgs:[]},
+  {name:'SEA',ig:'@sea_hirayama',igUrl:'https://instagram.com/sea_hirayama',desc:'フローラル・ネイチャー系。自然モチーフを得意とする。',imgs:[]},
+  {name:'ABYSS',ig:'@iwishyouwerehereforever',igUrl:'https://instagram.com/iwishyouwerehereforever',desc:'',imgs:[]},
+  {name:'NEE.',ig:'@nee._tattoo',igUrl:'https://instagram.com/nee._tattoo',desc:'ミニマル・ジオメトリックスタイル。シンプルで洗練されたデザイン。',imgs:[]},
+  {name:'YURIE',ig:'@yurie.0_o',igUrl:'https://instagram.com/yurie.0_o',desc:'ファインライン・レタリング。繊細なディテールを得意とする。',imgs:[]},
+  {name:'TOI',ig:'@ppppp101qqqqq',igUrl:'https://instagram.com/ppppp101qqqqq',desc:'',imgs:[]},
+  {name:'NEKONE KYOKO',ig:'@nekonekyoko',igUrl:'https://instagram.com/nekonekyoko',desc:'カラーワーク・ポップスタイル。鮮やかな発色が特徴。',imgs:[]},
+  {name:'DANIEL',ig:'@danierutattoo',igUrl:'https://instagram.com/danierutattoo',desc:'',imgs:[]},
+  {name:'JIJI',ig:'@marotaboi',igUrl:'https://instagram.com/marotaboi',desc:'',imgs:[]},
+  {name:'SOKI',ig:'@soki_kambara',igUrl:'https://instagram.com/soki_kambara',desc:'',imgs:[]},
+  {name:'ALISSA',ig:'@alysseterna1',igUrl:'https://instagram.com/alysseterna1',desc:'ヨーロッパ出身。装飾的・エレガントなスタイルが得意。',imgs:[]},
+  {name:'TSUBAKI',ig:'@blrqttz',igUrl:'https://instagram.com/blrqttz',desc:'パターン・装飾的なデザインを専門とする。',imgs:[]},
+  {name:'NAKAYAMA',ig:'@nrntru',igUrl:'https://instagram.com/nrntru',desc:'オリジナルデザインを中心に、幅広いスタイルに対応。',imgs:[]},
+  {name:'SAKURA',ig:'@02sa_tattoo',igUrl:'https://instagram.com/02sa_tattoo',desc:'ウォーターカラー・フローラル。柔らかな色使いと繊細なデザインが得意。',imgs:[]},
+  {name:'KAYA',ig:'@gigigigiggy',igUrl:'https://instagram.com/gigigigiggy',desc:'',imgs:[]},
+  {name:'SEI',ig:'@lili_ijll',igUrl:'https://instagram.com/lili_ijll',desc:'',imgs:[]},
+  {name:'RAI',ig:'@tokyoaddiction',igUrl:'https://instagram.com/tokyoaddiction',desc:'',imgs:[]},
+  {name:'NAMI',ig:'@nami10g',igUrl:'https://instagram.com/nami10g',desc:'ポートレート・リアリズム。繊細な陰影表現が得意。',imgs:[]},
+  {name:'ARMAINE',ig:'@lunarose.tatt',igUrl:'https://instagram.com/lunarose.tatt',desc:'',imgs:[]},
+  {name:'KAI',ig:'@kaitattooer',igUrl:'https://instagram.com/kaitattooer',desc:'',imgs:[]},
+  {name:'AKIRA',ig:'@whodisturbsthedead',igUrl:'https://instagram.com/whodisturbsthedead',desc:'',imgs:[]},
 ];
+
+let dCurrentSlide=0;
 let mCurrent=0;
+
+function dSlide(i){
+  dCurrentSlide=i;
+  const track=document.getElementById('dSlideTrack');
+  const w=track.parentElement.offsetWidth;
+  track.style.transform=`translateX(${-w*i}px)`;
+  document.querySelectorAll('.s-dot').forEach((d,j)=>d.classList.toggle('on',j===i));
+}
+
+function updateDesktopSlides(a){
+  const track=document.getElementById('dSlideTrack');
+  track.innerHTML='';
+  dCurrentSlide=0;
+  document.querySelectorAll('.s-dot').forEach((d,j)=>{d.classList.toggle('on',j===0);});
+  for(let i=0;i<3;i++){
+    const div=document.createElement('div');
+    div.className='slide-img';
+    if(a.imgs&&a.imgs[i]){
+      div.innerHTML=`<img src="${a.imgs[i]}" alt="${a.name}">`;
+    } else {
+      div.innerHTML=`<span class="slide-hint">${i===0?a.name:'—'}</span>`;
+    }
+    track.appendChild(div);
+    const dot=document.getElementById('dSlideDots').children[i];
+    if(dot){dot.onclick=()=>dSlide(i);}
+  }
+  track.style.transform='translateX(0)';
+}
+
 function renderD(i){
   const a=ARTISTS[i];
   document.getElementById('diName').textContent=a.name;
   document.getElementById('diIg').textContent=a.ig;
   document.getElementById('diDesc').textContent=a.desc;
-  document.getElementById('mainImgLabel').textContent=a.name+' — Portfolio';
   document.getElementById('igBtn').href=a.igUrl;
   document.getElementById('bookBtn').href=a.igUrl;
   document.querySelectorAll('.idx-item').forEach((el,j)=>el.classList.toggle('on',j===i));
+  updateDesktopSlides(a);
 }
+
 function goTo(i){
   mCurrent=i;
   const w=document.querySelector('.m-slide-wrap').offsetWidth||window.innerWidth;
@@ -212,45 +257,77 @@ function goTo(i){
   const tab=document.querySelectorAll('.m-tab')[i];
   if(tab)tab.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
 }
+
 function build(){
   const n=ARTISTS.length;
   const idxList=document.getElementById('idxList');
   const mTabs=document.getElementById('mTabs');
   const slideTrack=document.getElementById('slideTrack');
   const slideDots=document.getElementById('slideDots');
+
   ARTISTS.forEach((a,i)=>{
+    // Desktop index
     const el=document.createElement('div');
     el.className='idx-item'+(i===0?' on':'');
     el.innerHTML=`<span class="idx-name">${a.name}</span>`;
     el.onclick=()=>renderD(i);
     idxList.appendChild(el);
+
+    // Mobile tab
     const tab=document.createElement('div');
     tab.className='m-tab'+(i===0?' on':'');
     tab.textContent=a.name;
     tab.onclick=()=>goTo(i);
     mTabs.appendChild(tab);
+
+    // Mobile slide with inner 3-image slideshow
     const slide=document.createElement('div');
     slide.className='m-slide';
+    const imgs=a.imgs&&a.imgs.length?a.imgs:[];
+    const slidesHtml=Array.from({length:3},(_,si)=>
+      `<div class="m-artist-slide">${imgs[si]?`<img src="${imgs[si]}" alt="${a.name}">`:'<span style="font-family:Inter,sans-serif;font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.15);text-transform:uppercase;">${si===0?a.name:\'—\'}</span>'}</div>`
+    ).join('');
+    const dotsHtml=Array.from({length:3},(_,si)=>`<div class="m-a-dot${si===0?' on':''}" data-artist="${i}" data-slide="${si}"></div>`).join('');
     slide.innerHTML=`
-      <div class="m-slide-img">
-        ${a.img?`<img src="${a.img}" alt="${a.name}">`:'' }
-        <div class="m-slide-counter">${String(i+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}</div>
+      <div class="m-artist-slideshow">
+        <div class="m-artist-slides" id="mas-${i}">${slidesHtml}</div>
+        <div class="m-counter" id="mac-${i}">01 / 03</div>
+        <div class="m-artist-dots" id="mad-${i}">${dotsHtml}</div>
       </div>
       <div class="m-slide-info">
         <div class="m-slide-name">${a.name}</div>
         <div class="m-slide-ig">${a.ig}</div>
         <div class="m-slide-actions">
-          <a class="btn-book" href="${a.igUrl}" target="_blank">予約する</a>
-          <a class="btn-ig" href="${a.igUrl}" target="_blank">↗ Instagram</a>
+          <a class="btn-primary" href="${a.igUrl}" target="_blank" style="font-size:10px;padding:12px 0;">予約する</a>
+          <a class="btn-ig" href="${a.igUrl}" target="_blank" style="font-size:10px;padding:11px 0;">↗ Instagram</a>
         </div>
       </div>`;
     slideTrack.appendChild(slide);
+
+    // Dot for artist navigation
     const dot=document.createElement('div');
     dot.className='dot'+(i===0?' on':'');
     dot.onclick=()=>goTo(i);
     slideDots.appendChild(dot);
   });
+
+  // Mobile inner slideshow dots click
+  document.addEventListener('click',e=>{
+    if(e.target.classList.contains('m-a-dot')){
+      const ai=parseInt(e.target.dataset.artist);
+      const si=parseInt(e.target.dataset.slide);
+      const track=document.getElementById(`mas-${ai}`);
+      const counter=document.getElementById(`mac-${ai}`);
+      if(track){
+        track.style.transform=`translateX(${-si*100}%)`;
+        counter.textContent=`${String(si+1).padStart(2,'0')} / 03`;
+      }
+      document.querySelectorAll(`[data-artist="${ai}"]`).forEach((d,j)=>d.classList.toggle('on',j===si));
+    }
+  });
+
   renderD(0);
+
   let startX=0;
   slideTrack.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
   slideTrack.addEventListener('touchend',e=>{
@@ -259,6 +336,7 @@ function build(){
     if(diff<-50&&mCurrent>0)goTo(mCurrent-1);
   },{passive:true});
 }
+
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 build();
 </script>
