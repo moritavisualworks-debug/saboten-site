@@ -163,7 +163,7 @@ a{text-decoration:none;color:inherit;}
       <!-- TATTOO
            写真追加: svc-imgの中に <img src="images/tattoo.jpg" alt="Tattoo"> を入れる -->
       <a class="svc" href="tattoo.html">
-        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-img" id="svcImgTattoo"><span class="svc-img-hint">Photo</span></div>
         <div class="svc-body">
           <div class="svc-name">TATTOO</div>
           <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
@@ -172,7 +172,7 @@ a{text-decoration:none;color:inherit;}
       </a>
       <!-- NAIL -->
       <a class="svc" href="nail.html">
-        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-img" id="svcImgNail"><span class="svc-img-hint">Photo</span></div>
         <div class="svc-body">
           <div class="svc-name">NAIL</div>
           <div class="svc-desc">SABOTEN NAIL PARLOR。スタジオ併設のネイルサロン。完全予約制。</div>
@@ -234,12 +234,27 @@ a{text-decoration:none;color:inherit;}
   </div>
 </footer>
 
+<script src="data.js"></script>
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 const fadeEls=document.querySelectorAll('.fade-in');
 const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
 fadeEls.forEach(el=>observer.observe(el));
 setTimeout(()=>{fadeEls.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');});},100);
+
+// ランダムでTATTOO/NAILサムネイル表示
+if (typeof getRandomTattooImage === 'function') {
+  const tattooImg = getRandomTattooImage();
+  if (tattooImg) {
+    document.getElementById('svcImgTattoo').innerHTML = `<img src="${tattooImg}" alt="Tattoo">`;
+  }
+}
+if (typeof getRandomNailImage === 'function') {
+  const nailImg = getRandomNailImage();
+  if (nailImg) {
+    document.getElementById('svcImgNail').innerHTML = `<img src="${nailImg}" alt="Nail">`;
+  }
+}
 </script>
 </body>
 </html>

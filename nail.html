@@ -103,6 +103,17 @@ a{text-decoration:none;color:inherit;}
   .btn-primary,.btn-ghost{text-align:center;width:100%;}
 }
 @media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
+
+/* GALLERY */
+.nail-gallery{padding:40px 48px;border-top:0.5px solid var(--line-soft);}
+.gallery-label{font-family:var(--inter);font-size:9px;letter-spacing:0.22em;color:var(--pink-dim);text-transform:uppercase;margin-bottom:20px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);}
+.gallery-item{aspect-ratio:1;background:#161616;position:relative;overflow:hidden;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+@media(max-width:768px){
+  .nail-gallery{padding:24px 20px;}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+}
 </style>
 </head>
 <body>
@@ -225,6 +236,12 @@ a{text-decoration:none;color:inherit;}
   </div>
 </div>
 
+<!-- ★ ネイル写真追加: data.js の NAIL_IMAGES 配列に画像パスを追加してください -->
+<div class="nail-gallery" id="nailGallery">
+  <div class="gallery-label">Gallery</div>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
 <div class="book-banner">
   <div>
     <div class="book-banner-title">Instagram で予約する</div>
@@ -235,6 +252,7 @@ a{text-decoration:none;color:inherit;}
   </div>
 </div>
 
+<script src="data.js"></script>
 <script>
 function switchTab(id,el){
   document.querySelectorAll('.menu-content').forEach(c=>c.classList.remove('show'));
@@ -243,6 +261,19 @@ function switchTab(id,el){
   el.classList.add('on');
 }
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+// ギャラリー表示
+if (typeof NAIL_IMAGES !== 'undefined' && NAIL_IMAGES.length > 0) {
+  const grid = document.getElementById('galleryGrid');
+  NAIL_IMAGES.forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.innerHTML = `<img src="${src}" alt="Nail design">`;
+    grid.appendChild(div);
+  });
+} else {
+  document.getElementById('nailGallery').style.display = 'none';
+}
 </script>
 </body>
 </html>
