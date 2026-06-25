@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price — SABOTEN TATTOO PARLOR</title>
+  <link rel="preload" href="https://fonts.gstatic.com/s/anton/v25/1Ptgg87LROyAm0K08i4gS7lu.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0c0c0c; --white:#f0f0f0; --green:#7fff6a;
+  --line:rgba(255,255,255,0.08); --line-soft:rgba(255,255,255,0.06);
+  --text-muted:rgba(255,255,255,0.65); --text-dim:rgba(255,255,255,0.45);
+  --logo:'Anton',sans-serif; --noto:'Noto Sans JP',sans-serif; --inter:'Inter',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.96);backdrop-filter:blur(16px);}
+.nav-logo{display:flex;flex-direction:column;line-height:1;}
+.nav-logo-main{font-family:var(--logo);font-size:22px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--inter);font-size:8px;letter-spacing:0.22em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.16em;color:rgba(255,255,255,0.5);text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.6);}
+.nav-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:36px 24px;gap:4px;border-top:0.5px solid var(--line);overflow-y:auto;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:rgba(255,255,255,0.45);padding:10px 0;border-bottom:0.5px solid var(--line-soft);transition:color 0.2s;text-transform:uppercase;}
+.nav-mobile-menu a:hover{color:#fff;}
+
+/* PAGE */
+.page{padding:96px 48px 60px;}
+.page-title{font-family:var(--logo);font-size:48px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:6px;}
+.page-note{font-size:11px;color:var(--text-dim);font-weight:300;margin-bottom:48px;line-height:1.8;}
+
+/* PRICE LIST */
+.price-section{margin-bottom:48px;}
+.price-section-title{font-family:var(--logo);font-size:13px;letter-spacing:0.2em;color:var(--green);text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:0.5px solid rgba(127,255,106,0.2);}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.price-row:last-child{border-bottom:none;}
+.price-name{font-size:13px;color:var(--white);font-weight:300;}
+.price-name-ja{font-size:10px;color:var(--text-dim);margin-left:8px;}
+.price-val{font-family:var(--logo);font-size:18px;color:var(--white);letter-spacing:0.04em;white-space:nowrap;}
+
+/* BOOK BANNER */
+.book-banner{border-top:0.5px solid var(--line);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.book-banner-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:6px;}
+.book-banner-sub{font-size:11px;color:var(--text-muted);font-weight:300;line-height:1.8;}
+.btn-primary{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;display:inline-block;transition:opacity 0.2s;font-weight:500;white-space:nowrap;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;white-space:nowrap;}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
+.banner-btns{display:flex;gap:12px;flex-shrink:0;}
+
+@media(max-width:768px){
+  .nav{padding:0 20px;height:60px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-mobile-menu{top:60px;}
+  .page{padding:78px 20px 40px;}
+  .page-title{font-size:36px;}
+  .book-banner{flex-direction:column;align-items:flex-start;padding:24px 20px;}
+  .banner-btns{flex-direction:column;width:100%;}
+  .btn-primary,.btn-outline{text-align:center;width:100%;}
+}
+@media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-main">SABOTEN</div>
+    <div class="nav-logo-sub">TATTOO · NAIL · FASHION · CREATIVE · REAL ESTATE</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="tattoo.html">Tattoo</a></li>
+    <li><a href="price.html" class="active">Price</a></li>
+    <li><a href="nail.html">Nail</a></li>
+    <li><a href="works.html">Creative</a></li>
+    <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
+    <li><a href="access.html">Access</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
+  <a href="price.html" onclick="toggleMenu()">Price</a>
+  <a href="nail.html" onclick="toggleMenu()">Nail</a>
+  <a href="works.html" onclick="toggleMenu()">Creative</a>
+  <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
+  <a href="access.html" onclick="toggleMenu()">Access</a>
+</div>
+<div class="page">
+  <div class="page-title">Price</div>
+  <p class="page-note">
+    料金はアーティストにより異なります。詳細は各アーティストへお問い合わせください。<br>
+    Price varies depending on the artist. Please contact each artist for details.
+  </p>
+
+  <div class="price-section">
+    <div class="price-section-title">Tattoo Price Guide</div>
+    <div class="price-row">
+      <span class="price-name">コインサイズ <span class="price-name-ja">Coin Size</span></span>
+      <span class="price-val">¥5,000〜</span>
+    </div>
+    <div class="price-row">
+      <span class="price-name">タバコサイズ <span class="price-name-ja">Cigarette Box Size</span></span>
+      <span class="price-val">¥15,000〜</span>
+    </div>
+    <div class="price-row">
+      <span class="price-name">ハガキサイズ <span class="price-name-ja">Postcard Size</span></span>
+      <span class="price-val">¥23,000〜</span>
+    </div>
+    <div class="price-row">
+      <span class="price-name">A4サイズ以上 <span class="price-name-ja">A4 Size & Above</span></span>
+      <span class="price-val">お問い合わせ</span>
+    </div>
+  </div>
+
+  <div class="price-section">
+    <div class="price-section-title">Notes</div>
+    <div class="price-row">
+      <span class="price-name">ご予約</span>
+      <span class="price-name-ja" style="font-size:11px;color:var(--text-muted);">各アーティストのInstagramよりお願いしております</span>
+    </div>
+    <div class="price-row">
+      <span class="price-name">料金について</span>
+      <span class="price-name-ja" style="font-size:11px;color:var(--text-muted);">デザインの複雑さ・施術時間により変動します</span>
+    </div>
+  </div>
+</div>
+
+<div class="book-banner">
+  <div>
+    <div class="book-banner-title">アーティストを選んで予約へ</div>
+    <div class="book-banner-sub">各アーティストのInstagramから直接ご予約いただけます。<br>Find your artist and book via Instagram.</div>
+  </div>
+  <div class="banner-btns">
+    <a class="btn-primary" href="tattoo.html">アーティストを見る</a>
+    <a class="btn-outline" href="access.html">お問い合わせ</a>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+</script>
+</body>
+</html>

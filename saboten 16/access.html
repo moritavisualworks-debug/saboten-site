@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access — SABOTEN TATTOO PARLOR</title>
+  <link rel="preload" href="https://fonts.gstatic.com/s/anton/v25/1Ptgg87LROyAm0K08i4gS7lu.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0c0c0c;--white:#e8e8e8;--green:#7fff6a;--green-dim:rgba(127,255,106,0.6);--green-border:rgba(127,255,106,0.25);--line:rgba(255,255,255,0.08);--line-soft:rgba(255,255,255,0.06);--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);--logo:'Anton',sans-serif;--noto:'Noto Sans JP',sans-serif;--inter:'Inter',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:var(--noto);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;border-bottom:0.5px solid var(--line);background:rgba(12,12,12,0.92);backdrop-filter:blur(12px);}
+.nav-logo{font-family:var(--logo);font-size:20px;letter-spacing:0.25em;color:#fff;line-height:1;}
+.nav-logo span{display:block;font-family:var(--noto);font-size:8px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-top:2px;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--inter);font-size:10px;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-lang{display:flex;gap:12px;}
+.nav-lang span{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);cursor:pointer;}
+.nav-lang span.active{color:var(--green);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(255,255,255,0.65);}
+
+.ph{padding:96px 48px 28px;border-bottom:0.5px solid var(--line-soft);}
+.ph-title{font-family:var(--logo);font-size:48px;letter-spacing:0.06em;color:#fff;line-height:1;}
+.ph-title small{display:block;font-family:var(--noto);font-size:10px;font-weight:300;letter-spacing:0.2em;color:var(--text-dim);margin-bottom:6px;}
+
+.access-grid{display:grid;grid-template-columns:1fr 1fr;}
+.map-area{border-right:0.5px solid var(--line-soft);background:#141414;position:relative;min-height:480px;overflow:hidden;}
+.map-area iframe{width:100%;height:100%;border:none;position:absolute;inset:0;filter:grayscale(100%) invert(90%) contrast(88%);}
+.map-label{position:absolute;bottom:16px;left:16px;background:rgba(12,12,12,0.92);padding:10px 16px;backdrop-filter:blur(8px);}
+.map-label-name{font-family:var(--logo);font-size:14px;letter-spacing:0.1em;color:#fff;}
+.map-label-addr{font-family:var(--inter);font-size:8px;letter-spacing:0.1em;color:rgba(255,255,255,0.48);margin-top:2px;}
+
+.info-area{padding:0;}
+.info-block{padding:24px 48px;border-bottom:0.5px solid var(--line-soft);}
+.info-block:last-child{border-bottom:none;}
+.info-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--green-dim);text-transform:uppercase;margin-bottom:10px;}
+.info-value{font-size:13px;color:var(--white);font-weight:300;line-height:1.8;}
+.info-value strong{font-weight:500;color:#fff;}
+.info-sub{font-family:var(--inter);font-size:9px;color:rgba(255,255,255,0.22);margin-top:4px;letter-spacing:0.08em;}
+
+.station-list{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.station-item{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.station-name{font-size:14px;color:#fff;font-weight:500;}
+.station-line{font-family:var(--inter);font-size:9px;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
+.station-walk{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:var(--green);}
+
+.maps-link{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--green);display:inline-flex;align-items:center;gap:6px;margin-top:4px;transition:opacity 0.2s;}
+.maps-link:hover{opacity:0.7;}
+
+.access-cta{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line-soft);}
+.cta-item{padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-right:0.5px solid var(--line-soft);cursor:pointer;transition:background 0.2s;text-decoration:none;color:inherit;}
+.cta-item:last-child{border-right:none;}
+.cta-item:hover{background:rgba(255,255,255,0.02);}
+.cta-label{font-family:var(--inter);font-size:8px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
+.cta-title{font-family:var(--logo);font-size:22px;letter-spacing:0.08em;color:#fff;}
+.cta-arrow{font-size:20px;color:var(--text-faint);}
+
+.nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;padding:40px 24px;gap:8px;border-top:0.5px solid var(--line);}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{font-family:var(--logo);font-size:36px;letter-spacing:0.08em;color:rgba(255,255,255,0.48);padding:12px 0;border-bottom:0.5px solid var(--line-soft);}
+.nav-mobile-lang{display:flex;gap:16px;margin-top:24px;}
+.nav-mobile-lang span{font-family:var(--inter);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);cursor:pointer;}
+.nav-mobile-lang span.active{color:var(--green);}
+
+@media(max-width:768px){
+  .nav{padding:0 20px;height:56px;}
+  .nav-links,.nav-lang{display:none;}
+  .nav-hamburger{display:flex;}
+  .ph{padding:76px 20px 20px;}
+  .access-grid{grid-template-columns:1fr;}
+  .map-area{min-height:260px;}
+  .info-block{padding:20px;}
+  .access-cta{grid-template-columns:1fr;}
+  .cta-item{border-right:none;border-bottom:0.5px solid var(--line-soft);padding:20px;}
+  .cta-item:last-child{border-bottom:none;}
+}
+@media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-main">SABOTEN</div>
+    <div class="nav-logo-sub">TATTOO · NAIL · FASHION · CREATIVE · REAL ESTATE</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="tattoo.html">Tattoo</a></li>
+    <li><a href="price.html">Price</a></li>
+    <li><a href="nail.html">Nail</a></li>
+    <li><a href="works.html">Creative</a></li>
+    <li><a href="https://www.instagram.com/saboten.realestate" target="_blank">Real Estate</a></li>
+    <li><a href="https://nikerata.com" target="_blank">Nikerata</a></li>
+    <li><a href="access.html" class="active">Access</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="tattoo.html" onclick="toggleMenu()">Tattoo</a>
+  <a href="price.html" onclick="toggleMenu()">Price</a>
+  <a href="nail.html" onclick="toggleMenu()">Nail</a>
+  <a href="works.html" onclick="toggleMenu()">Creative</a>
+  <a href="https://www.instagram.com/saboten.realestate" target="_blank" onclick="toggleMenu()">Real Estate</a>
+  <a href="https://nikerata.com" target="_blank" onclick="toggleMenu()">Nikerata</a>
+  <a href="access.html" onclick="toggleMenu()">Access</a>
+</div>
+<div class="ph">
+  <div class="ph-title"><small>アクセス</small>ACCESS</div>
+</div>
+
+<div class="access-grid">
+  <div class="map-area">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.48!2d139.7284!3d35.6727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b7efd3e8b21%3A0x5c6ab2d17b93a8fe!2z5p2x5Lqs6YO95riF6KW_77yW77yR77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1700000000000"
+      allowfullscreen loading="lazy">
+    </iframe>
+    <div class="map-label">
+      <div class="map-label-name">SABOTEN TATTOO PARLOR</div>
+      <div class="map-label-addr">赤坂ミツワビル別館3F</div>
+    </div>
+  </div>
+
+  <div class="info-area">
+    <div class="info-block">
+      <div class="info-label">Address / 住所</div>
+      <div class="info-value"><strong>東京都港区赤坂6-15</strong><br>赤坂ミツワビル別館3F</div>
+      <div class="info-sub">Akasaka Mitsuwa Bldg. Bekkan 3F, 6-15-1 Akasaka, Minato-ku, Tokyo</div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Nearest Station / 最寄り駅</div>
+      <div class="station-list">
+        <div class="station-item">
+          <span class="station-name">赤坂駅</span>
+          <span class="station-line">東京メトロ千代田線</span>
+          <span class="station-walk">徒歩5分</span>
+        </div>
+        <div class="station-item">
+          <span class="station-name">六本木駅</span>
+          <span class="station-line">東京メトロ日比谷線 / 都営大江戸線</span>
+          <span class="station-walk">徒歩10分</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Tel / 電話</div>
+      <div class="info-value"><strong><a href="tel:0366752578" style="color:#fff;">03-6675-2578</a></strong></div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Google Maps</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/東京都港区赤坂6-15-1+赤坂ミツワビル別館" target="_blank">
+        Open in Google Maps →
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="access-cta">
+  <a class="cta-item" href="tattoo.html">
+    <div><div class="cta-label">Reservation</div><div class="cta-title">予約・お問い合わせ</div></div>
+    <span class="cta-arrow">→</span>
+  </a>
+  <a class="cta-item" href="tattoo.html">
+    <div><div class="cta-label">Artists</div><div class="cta-title">アーティストを見る</div></div>
+    <span class="cta-arrow">→</span>
+  </a>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+</script>
+</body>
+</html>
