@@ -60,6 +60,9 @@ a{text-decoration:none;color:inherit;}
 /* 写真エリア */
 .svc-img{width:100%;aspect-ratio:4/3;background:#161616;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .svc-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.svc-img-grid{width:100%;aspect-ratio:4/3;background:#161616;display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden;}
+.svc-img-grid div{position:relative;overflow:hidden;}
+.svc-img-grid div img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .svc-img-hint{font-family:var(--inter);font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.15);text-transform:uppercase;}
 .svc-body{padding:20px 22px 24px;}
 .svc-name{font-family:var(--logo);font-size:18px;letter-spacing:0.04em;color:#fff;text-transform:uppercase;margin-bottom:8px;line-height:1;}
@@ -163,7 +166,7 @@ a{text-decoration:none;color:inherit;}
       <!-- TATTOO
            写真追加: svc-imgの中に <img src="images/tattoo.jpg" alt="Tattoo"> を入れる -->
       <a class="svc" href="tattoo.html">
-        <div class="svc-img" id="svcImgTattoo"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-img-grid" id="svcImgTattoo"></div>
         <div class="svc-body">
           <div class="svc-name">TATTOO</div>
           <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
@@ -205,7 +208,7 @@ a{text-decoration:none;color:inherit;}
 <!-- NIKERATA BANNER -->
 <!-- 写真追加: nikerata-imgの中に <img src="images/nikerata.jpg" alt="Nikerata"> を入れる -->
 <div class="nikerata">
-  <div class="nikerata-img"><span class="svc-img-hint">Photo</span></div>
+  <div class="nikerata-img"><img src="images/nikerata.jpg" alt="Nikerata"></div>
   <div>
     <div class="nikerata-label">Select Shop</div>
     <div class="nikerata-name">NIKERATA</div>
@@ -243,10 +246,13 @@ fadeEls.forEach(el=>observer.observe(el));
 setTimeout(()=>{fadeEls.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');});},100);
 
 // ランダムでTATTOO/NAILサムネイル表示
-if (typeof getRandomTattooImage === 'function') {
-  const tattooImg = getRandomTattooImage();
-  if (tattooImg) {
-    document.getElementById('svcImgTattoo').innerHTML = `<img src="${tattooImg}" alt="Tattoo">`;
+if (typeof ARTISTS !== 'undefined') {
+  const allImgs = ARTISTS.flatMap(a => a.imgs || []);
+  const shuffled = allImgs.sort(() => Math.random() - 0.5);
+  const pick3 = shuffled.slice(0, 3);
+  const el = document.getElementById('svcImgTattoo');
+  if (el) {
+    el.innerHTML = pick3.map(src => `<div><img src="${src}" alt="Tattoo"></div>`).join('');
   }
 }
 if (typeof getRandomNailImage === 'function') {

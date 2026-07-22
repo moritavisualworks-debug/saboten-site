@@ -30,6 +30,7 @@ a{text-decoration:none;color:inherit;}
 .hero{position:relative;height:100vh;overflow:hidden;padding-top:64px;}
 .hero-slides{display:flex;height:100%;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);}
 .hero-slide{min-width:100%;height:100%;background:#161616;position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-slide video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .hero-slide img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .hero-slide-hint{font-family:var(--inter);font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.15);text-transform:uppercase;}
 /* OVERLAY */
@@ -128,11 +129,19 @@ a{text-decoration:none;color:inherit;}
 <!-- ★ 写真追加: WORKS_IMAGES配列に画像パスを追加してください -->
 <div class="hero" id="heroSection">
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide"><span class="hero-slide-hint">Portfolio 01</span></div>
-    <div class="hero-slide"><span class="hero-slide-hint">Portfolio 02</span></div>
-    <div class="hero-slide"><span class="hero-slide-hint">Portfolio 03</span></div>
-    <div class="hero-slide"><span class="hero-slide-hint">Portfolio 04</span></div>
-    <div class="hero-slide"><span class="hero-slide-hint">Portfolio 05</span></div>
+    <div class="hero-slide">
+      <video autoplay muted loop playsinline><source src="images/work_video1.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero-slide">
+      <video autoplay muted loop playsinline><source src="images/work_video2.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero-slide">
+      <video autoplay muted loop playsinline><source src="images/work_video3.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero-slide"><img src="images/work1.jpg" alt="Portfolio 01"></div>
+    <div class="hero-slide"><img src="images/work2.jpg" alt="Portfolio 02"></div>
+    <div class="hero-slide"><img src="images/work3.jpg" alt="Portfolio 03"></div>
+    <div class="hero-slide"><img src="images/work4.jpg" alt="Portfolio 04"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -164,35 +173,6 @@ a{text-decoration:none;color:inherit;}
   </div>
 </div>
 
-<!-- PORTFOLIO GRID -->
-<!-- ★ 写真追加: portfolio-itemの中に <img src="images/work1.jpg" alt="作品名"> を入れる -->
-<div class="portfolio-grid">
-  <div class="portfolio-item tall">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Film / Video</div></div>
-  </div>
-  <div class="portfolio-item">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Photography</div></div>
-  </div>
-  <div class="portfolio-item">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Branding</div></div>
-  </div>
-  <div class="portfolio-item">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Direction</div></div>
-  </div>
-  <div class="portfolio-item">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Web Design</div></div>
-  </div>
-  <div class="portfolio-item">
-    <div class="portfolio-placeholder"><span class="ph-hint">Work</span></div>
-    <div class="portfolio-overlay"><div class="portfolio-title">Promotion</div></div>
-  </div>
-</div>
-
 <!-- CONTACT -->
 <div class="contact" id="contact">
   <div class="contact-label">Contact</div>
@@ -218,6 +198,10 @@ function gotoHero(i){
   hCurrent=i;
   document.getElementById('heroSlides').style.transform=`translateX(${-100*i}%)`;
   document.querySelectorAll('.h-dot').forEach((d,j)=>d.classList.toggle('on',j===i));
+  // 動画制御
+  document.querySelectorAll('.hero-slide video').forEach((v,j)=>{
+    if(j===i){v.play();}else{v.pause();}
+  });
 }
 
 function heroSlide(dir){

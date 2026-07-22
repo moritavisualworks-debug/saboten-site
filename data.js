@@ -36,8 +36,16 @@ const ARTISTS = [
 /* ★ ネイル写真追加方法
    配列に画像パスを追加するだけ。例: 'images/nail1.jpg' */
 const NAIL_IMAGES = [
-  // 'images/nail1.jpg',
-  // 'images/nail2.jpg',
+  'images/nail1.jpg',
+  'images/nail2.jpg',
+  'images/nail3.jpg',
+  'images/nail4.jpg',
+  'images/nail5.jpg',
+  'images/nail6.jpg',
+  'images/nail7.jpg',
+  'images/nail8.jpg',
+  'images/nail9.jpg',
+  'images/nail10.jpg',
 ];
 
 /* ===== HELPER: 全アーティストの画像をフラットな配列にして1枚ランダム取得 ===== */
