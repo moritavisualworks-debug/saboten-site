@@ -49,7 +49,7 @@ a{text-decoration:none;color:inherit;}
 .btn-outline{font-family:var(--inter);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;display:inline-block;transition:all 0.2s;white-space:nowrap;}
 .btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
 .hero-right{background:#111;position:relative;overflow:hidden;}
-.hero-right iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none;}
+.hero-right iframe,.hero-right video{width:100%;height:100%;position:absolute;inset:0;border:none;object-fit:cover;pointer-events:none;}
 
 /* SERVICES */
 .services{border-top:0.5px solid var(--line);}
@@ -73,6 +73,8 @@ a{text-decoration:none;color:inherit;}
 .nikerata{border-top:0.5px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:28px 48px;}
 .nikerata-img{width:60px;aspect-ratio:602/2234;background:#161616;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nikerata-img img,.nikerata-img video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.nikerata-img .pc-only{display:block;}
+.nikerata-img .sp-only{display:none;}
 .nikerata-label{font-family:var(--inter);font-size:8px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
 .nikerata-name{font-family:var(--logo);font-size:28px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;}
 .nikerata-desc{font-size:11px;line-height:1.8;color:var(--text-muted);font-weight:300;}
@@ -101,7 +103,7 @@ a{text-decoration:none;color:inherit;}
   .hero-main{grid-template-columns:1fr;min-height:auto;}
   .hero-left{padding:32px 20px 28px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
   .hero-headline{font-size:52px;}
-  .hero-right{height:220px;}
+  .hero-right{height:260px;max-height:40vh;overflow:hidden;}
   .services{margin-top:16px;}
   .hero-cta{gap:10px;}
   .btn-primary,.btn-outline{padding:13px 20px;font-size:10px;width:100%;text-align:center;display:block;}
@@ -111,6 +113,8 @@ a{text-decoration:none;color:inherit;}
   
   .nikerata,.realestate{grid-template-columns:1fr;gap:16px;padding:20px;}
   .nikerata-img,.re-img{width:100%;height:140px;}
+  .nikerata-img .pc-only{display:none;}
+  .nikerata-img .sp-only{display:block;}
   .footer{flex-direction:column;gap:10px;padding:16px 20px;text-align:center;}
 }
 @media(min-width:769px){.nav-hamburger{display:none;}.nav-mobile-menu{display:none!important;}}
@@ -153,7 +157,6 @@ a{text-decoration:none;color:inherit;}
         <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
       </div>
       <div class="hero-cta fade-in" style="transition-delay:0.15s;">
-        <a class="btn-primary" href="tattoo.html">予約・お問い合わせ</a>
         <a class="btn-outline" href="tattoo.html">アーティストを見る</a>
       </div>
     </div>
@@ -185,7 +188,7 @@ a{text-decoration:none;color:inherit;}
       </a>
       <!-- CREATIVE -->
       <a class="svc" href="works.html">
-        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-img" id="svcImgCreative"><span class="svc-img-hint">Photo</span></div>
         <div class="svc-body">
           <div class="svc-name">CREATIVE</div>
           <div class="svc-desc">SABOTEN WORKS。映像・写真・ブランディング・クリエイティブ全般。</div>
@@ -209,7 +212,10 @@ a{text-decoration:none;color:inherit;}
 <!-- NIKERATA BANNER -->
 <!-- 写真追加: nikerata-imgの中に <img src="images/nikerata.jpg" alt="Nikerata"> を入れる -->
 <div class="nikerata">
-  <div class="nikerata-img"><video autoplay muted loop playsinline><source src="images/nikerata_video.mp4" type="video/mp4"></video></div>
+  <div class="nikerata-img">
+    <img class="pc-only" src="images/nikerata.jpg" alt="Nikerata">
+    <video class="sp-only" autoplay muted loop playsinline><source src="images/nikerata_video.mp4" type="video/mp4"></video>
+  </div>
   <div>
     <div class="nikerata-label">Select Shop</div>
     <div class="nikerata-name">NIKERATA</div>
@@ -228,6 +234,10 @@ a{text-decoration:none;color:inherit;}
     <div class="re-desc">クリエイター・アーティストのための不動産サービス。<br>物件探し・審査のご相談はお気軽に。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">@saboten.realestate</span></div>
   </div>
   <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
+</div>
+
+<div style="border-top:0.5px solid rgba(255,255,255,0.06);padding:32px 48px;text-align:center;">
+  <a class="btn-primary" href="mailto:moritavisualworks@gmail.com">その他のお問い合わせ</a>
 </div>
 
 <footer class="footer">
@@ -268,6 +278,13 @@ const hairEl = document.getElementById('svcImgHair');
 if (hairEl) {
   const src = hairImgs[Math.floor(Math.random() * hairImgs.length)];
   hairEl.innerHTML = `<img src="${src}" alt="Hair">`;
+}
+// CREATIVEランダム表示
+const creativeImgs = ['images/work1.jpg','images/work2.jpg','images/work3.jpg','images/work4.jpg'];
+const creativeEl = document.getElementById('svcImgCreative');
+if (creativeEl) {
+  const src = creativeImgs[Math.floor(Math.random() * creativeImgs.length)];
+  creativeEl.innerHTML = `<img src="${src}" alt="Creative">`;
 }
 </script>
 </body>
