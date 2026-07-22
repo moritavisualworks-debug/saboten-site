@@ -262,6 +262,16 @@ function switchTab(id,el){
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 
 // ギャラリー表示
+// ヒーローグリッド4枚にランダムで入れる
+if (typeof NAIL_IMAGES !== 'undefined' && NAIL_IMAGES.length > 0) {
+  const shuffled = [...NAIL_IMAGES].sort(() => Math.random() - 0.5);
+  const heroPhotos = document.querySelectorAll('.nail-hero-right .nail-photo');
+  heroPhotos.forEach((el, i) => {
+    const src = shuffled[i % shuffled.length];
+    el.innerHTML = `<img src="${src}" alt="Nail">`;
+  });
+}
+
 if (typeof NAIL_IMAGES !== 'undefined' && NAIL_IMAGES.length > 0) {
   const grid = document.getElementById('galleryGrid');
   NAIL_IMAGES.forEach(src => {

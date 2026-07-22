@@ -157,7 +157,7 @@ a{text-decoration:none;color:inherit;}
       </div>
     </div>
     <div class="hero-right">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=sabotentattooparlor&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Vc6WcdrRzks?autoplay=1&mute=1&loop=1&playlist=Vc6WcdrRzks&controls=0&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -193,7 +193,7 @@ a{text-decoration:none;color:inherit;}
       </a>
       <!-- HAIR -->
       <a class="svc" href="https://www.instagram.com/soki_kambara" target="_blank">
-        <div class="svc-img"><span class="svc-img-hint">Photo</span></div>
+        <div class="svc-img" id="svcImgHair"><span class="svc-img-hint">Photo</span></div>
         <div class="svc-body">
           <div class="svc-name">HAIR</div>
           <div class="svc-desc">ヘアスタイリスト @soki_kambara。Instagramより予約受付中。</div>
@@ -220,7 +220,7 @@ a{text-decoration:none;color:inherit;}
 <!-- REAL ESTATE BANNER -->
 <!-- 写真追加: re-imgの中に <img src="images/realestate.jpg" alt="Real Estate"> を入れる -->
 <div class="realestate">
-  <div class="re-img"><span class="svc-img-hint">Photo</span></div>
+  <div class="re-img"><img src="images/realestate.jpg" alt="Real Estate"></div>
   <div>
     <div class="re-label">Real Estate</div>
     <div class="re-name">REAL ESTATE</div>
@@ -260,6 +260,13 @@ if (typeof getRandomNailImage === 'function') {
   if (nailImg) {
     document.getElementById('svcImgNail').innerHTML = `<img src="${nailImg}" alt="Nail">`;
   }
+}
+// HAIRランダム表示
+const hairImgs = ['images/hair1.jpg','images/hair2.jpg','images/hair3.jpg'];
+const hairEl = document.getElementById('svcImgHair');
+if (hairEl) {
+  const src = hairImgs[Math.floor(Math.random() * hairImgs.length)];
+  hairEl.innerHTML = `<img src="${src}" alt="Hair">`;
 }
 </script>
 </body>
