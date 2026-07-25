@@ -96,10 +96,13 @@ a{text-decoration:none;color:inherit;}
 .m-artist-dots{display:flex;justify-content:center;gap:5px;padding:8px;background:rgba(12,12,12,0.8);position:absolute;bottom:0;left:0;right:0;}
 .m-a-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.2s;}
 .m-a-dot.on{background:#fff;width:12px;border-radius:2px;}
+.m-a-prev,.m-a-next{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:32px;height:32px;background:rgba(0,0,0,0.45);border:0.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;}
+.m-a-prev{left:8px;}
+.m-a-next{right:8px;}
 
 .m-counter{position:absolute;bottom:40px;right:12px;font-family:var(--inter);font-size:8px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);}
-.m-slide-info{padding:20px 20px 28px;border-bottom:0.5px solid var(--line-soft);}
-.m-slide-name{font-family:var(--logo);font-size:40px;letter-spacing:0.04em;color:#fff;line-height:0.9;text-transform:uppercase;}
+.m-slide-info{padding:20px 20px 28px;border-bottom:0.5px solid var(--line-soft);position:relative;}
+.m-slide-name{font-family:var(--logo);font-size:40px;letter-spacing:0.04em;color:rgba(255,255,255,0.2);line-height:0.9;text-transform:uppercase;position:absolute;bottom:100%;left:20px;right:20px;padding-bottom:12px;pointer-events:none;}
 .m-slide-ig{font-family:var(--inter);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.45);margin-top:8px;}
 .m-slide-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}
 .m-dots{display:none;justify-content:center;gap:6px;padding:14px 0;background:var(--black);}
@@ -181,7 +184,6 @@ a{text-decoration:none;color:inherit;}
         <div class="di-desc" id="diDesc"></div>
       </div>
       <div class="di-actions">
-        <a class="btn-primary" id="bookBtn" href="#" target="_blank">予約する / Book</a>
         <a class="btn-ig" id="igBtn" href="#" target="_blank">↗ Instagram</a>
       </div>
     </div>
@@ -291,13 +293,14 @@ function build(){
         <div class="m-artist-slides" id="mas-${i}">${slidesHtml}</div>
         <div class="m-counter" id="mac-${i}">01 / 03</div>
         <div class="m-artist-dots" id="mad-${i}">${dotsHtml}</div>
+        <div class="m-a-prev" data-artist="${i}" onclick="maPrev(${i})">&#8249;</div>
+        <div class="m-a-next" data-artist="${i}" onclick="maNext(${i})">&#8250;</div>
       </div>
       <div class="m-slide-info">
         <div class="m-slide-name">${a.name}</div>
         <div class="m-slide-ig">${a.ig}</div>
         <div class="m-slide-actions">
-          <a class="btn-primary" href="${a.igUrl}" target="_blank" style="font-size:10px;padding:12px 0;">予約する</a>
-          <a class="btn-ig" href="${a.igUrl}" target="_blank" style="font-size:10px;padding:11px 0;">↗ Instagram</a>
+          <a class="btn-ig" href="${a.igUrl}" target="_blank" style="font-size:10px;padding:11px 0;width:100%;">↗ Instagram</a>
         </div>
       </div>`;
     slideTrack.appendChild(slide);
@@ -336,6 +339,19 @@ function build(){
 }
 
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+const maCurrents={};
+function maGo(ai,si){
+  maCurrents[ai]=si;
+  const track=document.getElementById(`mas-${ai}`);
+  const counter=document.getElementById(`mac-${ai}`);
+  if(track)track.style.transform=`translateX(${-si*100}%)`;
+  if(counter)counter.textContent=`0${si+1} / 03`;
+  document.querySelectorAll(`[data-artist="${ai}"].m-a-dot`).forEach((d,j)=>d.classList.toggle('on',j===si));
+}
+function maPrev(ai){const cur=maCurrents[ai]||0;maGo(ai,(cur-1+3)%3);}
+function maNext(ai){const cur=maCurrents[ai]||0;maGo(ai,(cur+1)%3);}
+
 build();
 </script>
 </body>
