@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.sabotentattooparlor.com" }],
+      "destination": "https://sabotentattooparlor.com/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/lab",
+      "destination": "/lab.html"
+    }
+  ]
+}
