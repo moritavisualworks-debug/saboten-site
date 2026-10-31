@@ -45,7 +45,10 @@ a{text-decoration:none;color:inherit;}
 
 /* HERO */
 .hero{padding-top:64px;display:flex;flex-direction:column;}
-.hero-main{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 64px);}
+.hero-main{position:relative;height:calc(100vh - 64px);min-height:480px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,12,12,0.25) 0%,rgba(12,12,12,0.8) 100%);}
+.hero-content{position:absolute;left:0;right:0;bottom:0;padding:56px 48px;}
 .hero-left{padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid var(--line-soft);}
 .hero-headline{font-family:var(--logo);font-size:76px;line-height:0.95;letter-spacing:0.03em;color:#fff;text-transform:uppercase;}
 .hero-headline em{font-style:normal;color:var(--green);}
@@ -107,10 +110,9 @@ a{text-decoration:none;color:inherit;}
   .nav-hamburger{display:flex;}
   .nav-logo-main{font-size:20px;}
   .nav-mobile-menu{top:60px;}
-  .hero-main{grid-template-columns:1fr;min-height:auto;}
-  .hero-left{padding:32px 20px 28px;border-right:none;border-bottom:0.5px solid var(--line-soft);}
+  .hero-main{height:70vh;min-height:420px;}
+  .hero-content{padding:28px 20px;}
   .hero-headline{font-size:52px;}
-  .hero-right{height:260px;max-height:40vh;overflow:hidden;}
   .services{margin-top:16px;}
   .hero-cta{gap:10px;}
   .btn-primary,.btn-outline{padding:13px 20px;font-size:10px;width:100%;text-align:center;display:block;}
@@ -149,17 +151,11 @@ a{text-decoration:none;color:inherit;}
 
 <section class="hero">
   <div class="hero-main">
-    <div class="hero-left">
-      <div>
-        <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
-        <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
-      </div>
-      <div class="hero-cta fade-in" style="transition-delay:0.15s;">
-        <a class="btn-outline" href="tattoo.html">アーティストを見る</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="images/studio.jpg" alt="SABOTEN TATTOO PARLOR" onerror="heroFallback(this)">
+    <img class="hero-bg" src="images/studio.jpg" alt="SABOTEN TATTOO PARLOR" onerror="heroFallback(this)">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
+      <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
     </div>
   </div>
 
@@ -171,7 +167,7 @@ a{text-decoration:none;color:inherit;}
         <div class="svc-img-grid" id="svcImgTattoo"></div>
         <div class="svc-body">
           <div class="svc-name">TATTOO</div>
-          <div class="svc-desc">ワンポイントから大作まで。各アーティストのInstagramから予約受付中。</div>
+          <div class="svc-desc">ワンポイントから大作まで。LINE・メールで予約受付中。</div>
           <span class="svc-btn">Book</span>
         </div>
       </a>
@@ -232,10 +228,6 @@ a{text-decoration:none;color:inherit;}
     <div class="re-desc">クリエイター・アーティストのための不動産サービス。<br>物件探し・審査のご相談はお気軽に。<br><span style="color:rgba(255,255,255,0.3);font-size:10px;">@saboten.realestate</span></div>
   </div>
   <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
-</div>
-
-<div style="border-top:0.5px solid rgba(255,255,255,0.06);padding:32px 48px;text-align:center;">
-  <a class="btn-primary" href="mailto:moritavisualworks@gmail.com">その他のお問い合わせ</a>
 </div>
 
 <footer class="footer">
