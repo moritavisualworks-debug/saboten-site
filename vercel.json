@@ -1,16 +1,7 @@
 {
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.sabotentattooparlor.com" }],
-      "destination": "https://sabotentattooparlor.com/:path*",
-      "permanent": true
-    }
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.sabotentattooparlor.com" }], "destination": "https://sabotentattooparlor.com/:path*", "permanent": true },
+    { "source": "/price.html", "destination": "/tattoo.html#book", "permanent": true }
   ],
-  "rewrites": [
-    {
-      "source": "/lab",
-      "destination": "/lab.html"
-    }
-  ]
+  "rewrites": [ { "source": "/lab", "destination": "/lab.html" } ]
 }
