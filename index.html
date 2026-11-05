@@ -47,7 +47,7 @@ a{text-decoration:none;color:inherit;}
 .hero{padding-top:64px;display:flex;flex-direction:column;}
 .hero-main{position:relative;height:calc(100vh - 64px);min-height:480px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,12,12,0.25) 0%,rgba(12,12,12,0.8) 100%);}
+
 .hero-content{position:absolute;left:0;right:0;bottom:0;padding:56px 48px;}
 .hero-left{padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid var(--line-soft);}
 .hero-headline{font-family:var(--logo);font-size:76px;line-height:0.95;letter-spacing:0.03em;color:#fff;text-transform:uppercase;}
@@ -63,6 +63,7 @@ a{text-decoration:none;color:inherit;}
 
 .yt{aspect-ratio:16/9;max-height:80vh;width:100%;background:#000;border-top:0.5px solid var(--line);}
 .yt iframe{width:100%;height:100%;border:none;display:block;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
 /* SERVICES */
 .services{border-top:0.5px solid var(--line);}
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);}
@@ -112,7 +113,7 @@ a{text-decoration:none;color:inherit;}
   .nav-hamburger{display:flex;}
   .nav-logo-main{font-size:20px;}
   .nav-mobile-menu{top:60px;}
-  .hero-main{height:70vh;min-height:420px;}
+  .hero-main{height:48vh;min-height:300px;}
   .hero-content{padding:28px 20px;}
   .hero-headline{font-size:52px;}
   .services{margin-top:16px;}
@@ -154,14 +155,8 @@ a{text-decoration:none;color:inherit;}
 <section class="hero">
   <div class="hero-main">
     <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="images/studio.jpg"><source src="images/studio_video.mp4" type="video/mp4"></video>
-    <div class="hero-shade"></div>
-    <div class="hero-content">
-      <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
-      <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
-    </div>
+        <h1 class="sr-only">SABOTEN TATTOO PARLOR — Tokyo, Akasaka</h1>
   </div>
-
-  <div class="yt"><iframe src="https://www.youtube.com/embed/Vc6WcdrRzks?autoplay=1&mute=1&loop=1&playlist=Vc6WcdrRzks&controls=1&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
 
   <div class="services">
     <div class="services-grid">
@@ -233,6 +228,8 @@ a{text-decoration:none;color:inherit;}
   </div>
   <a class="btn-primary" href="https://www.instagram.com/saboten.realestate" target="_blank">View</a>
 </div>
+
+  <div class="yt" style="margin-top:0;"><iframe src="https://www.youtube.com/embed/Vc6WcdrRzks?autoplay=1&mute=1&loop=1&playlist=Vc6WcdrRzks&controls=1&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
 
 <footer class="footer">
   <span class="footer-addr">東京都港区赤坂6-15-1 赤坂ミツワビル別館（Bekkan）3F &nbsp;·&nbsp; 03-6675-2578</span>
