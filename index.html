@@ -61,6 +61,8 @@ a{text-decoration:none;color:inherit;}
 .hero-right{background:#111;position:relative;overflow:hidden;}
 .hero-right img,.hero-right iframe,.hero-right video{width:100%;height:100%;position:absolute;inset:0;border:none;object-fit:cover;}
 
+.yt{aspect-ratio:16/9;max-height:80vh;width:100%;background:#000;border-top:0.5px solid var(--line);}
+.yt iframe{width:100%;height:100%;border:none;display:block;}
 /* SERVICES */
 .services{border-top:0.5px solid var(--line);}
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);}
@@ -151,13 +153,15 @@ a{text-decoration:none;color:inherit;}
 
 <section class="hero">
   <div class="hero-main">
-    <img class="hero-bg" src="images/studio.jpg" alt="SABOTEN TATTOO PARLOR" onerror="heroFallback(this)">
+    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="images/studio.jpg"><source src="images/studio_video.mp4" type="video/mp4"></video>
     <div class="hero-shade"></div>
     <div class="hero-content">
       <h1 class="hero-headline fade-in">SABOTEN<br>TATTOO<br><em>PARLOR</em></h1>
       <p class="hero-desc fade-in" style="transition-delay:0.1s;">東京・赤坂に構える、東京都最大級のタトゥースタジオ。多国籍のアーティスト20名以上が在籍し、バラエティに富んだスタイルに対応しています。</p>
     </div>
   </div>
+
+  <div class="yt"><iframe src="https://www.youtube.com/embed/Vc6WcdrRzks?autoplay=1&mute=1&loop=1&playlist=Vc6WcdrRzks&controls=1&modestbranding=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
 
   <div class="services">
     <div class="services-grid">
